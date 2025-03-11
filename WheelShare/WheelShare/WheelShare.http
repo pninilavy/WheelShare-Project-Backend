@@ -1,0 +1,6 @@
+@WheelShare_HostAddress = http://localhost:5150
+
+GET {{WheelShare_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
