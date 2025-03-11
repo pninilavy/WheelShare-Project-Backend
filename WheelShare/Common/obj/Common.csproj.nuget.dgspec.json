@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Common\\Common.csproj": {}
+    "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Common\\Common.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Common\\Common.csproj": {
+    "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Common\\Common.csproj",
+        "projectUniqueName": "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Common\\Common.csproj",
         "projectName": "Common",
-        "projectPath": "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Common\\Common.csproj",
+        "projectPath": "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\WIN 11\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Common\\obj\\",
+        "outputPath": "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

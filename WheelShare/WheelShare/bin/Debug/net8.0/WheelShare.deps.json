@@ -706,7 +706,7 @@
       "Service/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.0",
-          "Repository": "1.0.0",
+          "Mock": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "8.6.1"
         },
         "runtime": {

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Repository\\Repository.csproj": {}
+    "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Repository\\Repository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Repository\\Repository.csproj": {
+    "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Repository\\Repository.csproj",
+        "projectUniqueName": "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Repository\\Repository.csproj",
+        "projectPath": "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\WIN 11\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WIN 11\\Desktop\\פרויקט\\WheelShare\\Repository\\obj\\",
+        "outputPath": "C:\\Users\\WIN 11\\Desktop\\WheelShare-Project\\WheelShare\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
