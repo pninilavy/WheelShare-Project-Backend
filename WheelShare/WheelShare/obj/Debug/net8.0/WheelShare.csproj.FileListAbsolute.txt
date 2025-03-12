@@ -173,3 +173,4 @@ C:\Users\WIN 11\Desktop\WheelShare-Project\WheelShare\WheelShare\obj\Debug\net8.
 C:\Users\WIN 11\Desktop\WheelShare-Project\WheelShare\WheelShare\obj\Debug\net8.0\WheelShare.pdb
 C:\Users\WIN 11\Desktop\WheelShare-Project\WheelShare\WheelShare\obj\Debug\net8.0\WheelShare.genruntimeconfig.cache
 C:\Users\WIN 11\Desktop\WheelShare-Project\WheelShare\WheelShare\obj\Debug\net8.0\ref\WheelShare.dll
+C:\Users\WIN 11\Desktop\WheelShare-Project\WheelShare\WheelShare\bin\Debug\net8.0\Newtonsoft.Json.dll

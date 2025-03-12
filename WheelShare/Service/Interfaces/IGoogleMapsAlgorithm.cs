@@ -11,6 +11,8 @@ namespace Service.Interfaces
     {
         public Task<Coordinates> GetCoordinates(string address);
 
-        public Task<double> TravelTimeCalculation(Coordinates origin, Coordinates destination);
+        public Task<double> TravelTimeCalculation(string origin, string destination);
+
+
     }
 }

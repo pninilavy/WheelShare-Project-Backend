@@ -42,21 +42,8 @@ namespace WheelShare.Controllers
         {
             return _service.Add(item);
         }
-
-        [HttpPost("gggg")]
-        public async Task<double> Post([FromBody] TravelRequest travelRequest)
-        {
-            Coordinates s = await googleMapsAlgoritm.GetCoordinates(travelRequest.Origin);
-            Coordinates t = await googleMapsAlgoritm.GetCoordinates(travelRequest.Destination);
-
-            return await googleMapsAlgoritm.TravelTimeCalculation(s, t);
-        }
-
-        [HttpPost("ffff")]
-        public Task<Coordinates> Post([FromBody] string item)
-        {
-            return googleMapsAlgoritm.GetCoordinates(item);
-        }
+    
+        
 
         // PUT api/<RideController>/5
         [HttpPut("{id}")]
