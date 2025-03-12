@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Repository.Entities;
 using Service.Interfaces;
+using Service.Models;
+using Service.NewFolder;
+using Service.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,10 +15,12 @@ namespace WheelShare.Controllers
     {
         private readonly IConfiguration config;
         private readonly IService<Ride> _service;
-        public RideController(IConfiguration config, IService<Ride> _service)
+        private readonly IGoogleMapsAlgorithm googleMapsAlgoritm;
+        public RideController(IConfiguration config, IService<Ride> _service, IGoogleMapsAlgorithm googleMapsAlgoritm)
         {
             this.config = config;
             this._service = _service;
+            this.googleMapsAlgoritm = googleMapsAlgoritm;
         }
         // GET: api/<RideController>
         [HttpGet]
@@ -36,6 +41,21 @@ namespace WheelShare.Controllers
         public Task<Ride> Post([FromBody] Ride item)
         {
             return _service.Add(item);
+        }
+
+        [HttpPost("gggg")]
+        public async Task<double> Post([FromBody] TravelRequest travelRequest)
+        {
+            Coordinates s = await googleMapsAlgoritm.GetCoordinates(travelRequest.Origin);
+            Coordinates t = await googleMapsAlgoritm.GetCoordinates(travelRequest.Destination);
+
+            return await googleMapsAlgoritm.TravelTimeCalculation(s, t);
+        }
+
+        [HttpPost("ffff")]
+        public Task<Coordinates> Post([FromBody] string item)
+        {
+            return googleMapsAlgoritm.GetCoordinates(item);
         }
 
         // PUT api/<RideController>/5
