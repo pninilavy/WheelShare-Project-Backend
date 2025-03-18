@@ -55,6 +55,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
     }
     );
 
+
+
 var myAllowSpecificOrigin = "_myAllowSpecificOrigin";
 builder.Services.AddCors(option =>
 {
@@ -62,7 +64,7 @@ builder.Services.AddCors(option =>
         builder =>
         {
             
-            builder.WithOrigins("http://localhost:5173")
+            builder.AllowAnyOrigin()
                 .AllowAnyMethod()   
                 .AllowAnyHeader(); 
         });

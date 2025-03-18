@@ -17,7 +17,7 @@ namespace WheelShare.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        
+
         private readonly IUserService<User> _userService;
         public UserController(IUserService<User> _userService)
         {
@@ -29,7 +29,7 @@ namespace WheelShare.Controllers
         public Task<List<User>> Get()
         {
             return _userService.GetAll();
-            
+
         }
 
         // GET api/<UserController>/5
@@ -37,21 +37,15 @@ namespace WheelShare.Controllers
         public Task<User> Get(int id)
         {
             return _userService.GetById(id);
-            
+
         }
 
-        // POST api/<UserController>
-        //[HttpPost]
-        //public Task<User> Post([FromBody] User item)
-        //{
-        //    return _userService.Add(item);
 
-        //}
         [HttpPost("SignIn")]
         public async Task<IActionResult> Post([FromBody] UserLogin userLogin)
         {
-            var user = await _userService.GetByIdNumberAndEmail(userLogin.IdNumber,userLogin.Email);
-            if (user!=null)
+            var user = await _userService.GetByIdNumberAndEmail(userLogin.IdNumber, userLogin.Email);
+            if (user != null)
             {
                 var token = _userService.Generate(user);
                 return Ok(token);
@@ -63,11 +57,11 @@ namespace WheelShare.Controllers
         [HttpPost("SignUp")]
         public async Task<IActionResult> Post([FromBody] User user)
         {
-                   
-                _userService.Add(user);
-                var token = _userService.Generate(user);
-                TokenAndName tokenAndName = new TokenAndName(token,user.FirstName,user.LastName);
-                return Ok(tokenAndName);         
+
+            user = await _userService.Add(user);
+            var token = _userService.Generate(user);
+            TokenAndName tokenAndName = new(token, user.FirstName, user.LastName);
+            return Ok(tokenAndName);
         }
 
 
@@ -87,7 +81,7 @@ namespace WheelShare.Controllers
 
         }
 
-       
-       
+
+
     }
 }
