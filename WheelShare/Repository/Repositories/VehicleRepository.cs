@@ -48,7 +48,6 @@ namespace Repository.Repositories
             vehicle.Seats=item.Seats;
             vehicle.StationID=item.StationID;
             vehicle.Station=item.Station;
-            vehicle.AvailabilityStatus=item.AvailabilityStatus;
             await context.Save();
             return vehicle;
         }

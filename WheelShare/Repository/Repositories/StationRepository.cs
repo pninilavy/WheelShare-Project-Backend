@@ -45,8 +45,6 @@ namespace Repository.Repositories
             station.Area = item.Area;
             station.City = item.City;
             station.Address = item.Address;
-            station.Capacity = item.Capacity;
-            station.AvailableSpaces= item.AvailableSpaces;
             await context.Save();
             return station;
 

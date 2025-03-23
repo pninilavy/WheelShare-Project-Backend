@@ -48,20 +48,19 @@ namespace WheelShare.Controllers
             if (user != null)
             {
                 var token = _userService.Generate(user);
-                return Ok(token);
+                TokenAndName tokenAndName = new(token, user.FirstName, user.LastName);
+                return Ok(tokenAndName);
             }
             return BadRequest("user not found");
 
         }
 
         [HttpPost("SignUp")]
-        public async Task<IActionResult> Post([FromBody] User user)
+        public async Task<User> Post([FromBody] User user)
         {
 
-            user = await _userService.Add(user);
-            var token = _userService.Generate(user);
-            TokenAndName tokenAndName = new(token, user.FirstName, user.LastName);
-            return Ok(tokenAndName);
+            return  await _userService.Add(user);
+         
         }
 
 

@@ -59,7 +59,7 @@ namespace Service.Services
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var claims = new[]
             {
-                
+                new Claim("Id",user.Id.ToString()),
                 new Claim(ClaimTypes.NameIdentifier,user.FirstName+" "+user.LastName),
                 new Claim(ClaimTypes.Email,user.Email),
                 new Claim(ClaimTypes.Gender,user.Gender),

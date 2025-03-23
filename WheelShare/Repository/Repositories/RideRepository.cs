@@ -51,11 +51,15 @@ namespace Repository.Repositories
             ride.SourceStation=item.SourceStation;
             ride.DestinationStationID = item.DestinationStationID;
             ride.DestinationStation=item.DestinationStation;
+            ride.Date = item.Date;
             ride.StartTime = item.StartTime;
             ride.EndTime = item.EndTime;
             ride.Status = item.Status;
             ride.TotalCost = item.TotalCost;
-            ride.IsPrivateRide = item.IsPrivateRide;
+            ride.SharedRide = item.SharedRide;
+            ride.NumSeats = item.NumSeats;
+            ride.SourceAddress = item.SourceAddress;
+            ride.DestinationAddress = item.DestinationAddress;
             await context.Save();
             return ride;
         }

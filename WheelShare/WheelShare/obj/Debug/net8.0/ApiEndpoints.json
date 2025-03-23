@@ -26,6 +26,28 @@
     ]
   },
   {
+    "ContainingType": "WheelShare.Controllers.GoogleMapsAlgorithmController",
+    "Method": "Post",
+    "RelativePath": "api/GoogleMapsAlgorithm/aaa",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ride",
+        "Type": "Repository.Entities.Ride",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "WheelShare.Controllers.PaymentController",
     "Method": "Get",
     "RelativePath": "api/Payment",
@@ -654,7 +676,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Repository.Entities.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WheelShare.Controllers.VehicleController",

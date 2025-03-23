@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repository.Entities;
 using Service.Interfaces;
 using Service.Models;
 using Service.Services;
@@ -26,6 +27,10 @@ namespace WheelShare.Controllers
             return await _googleMapsAlgorithm.TravelTimeCalculation(travelRequest.Origin, travelRequest.Destination);
         }
 
-
+        [HttpPost("aaa")]
+        public async Task Post([FromBody] Ride ride)
+        {
+            await _googleMapsAlgorithm.OptimalPlaceMent(ride);
+        }
     }
 }

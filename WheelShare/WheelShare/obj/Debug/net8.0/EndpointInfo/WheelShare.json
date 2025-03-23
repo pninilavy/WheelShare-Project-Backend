@@ -56,6 +56,37 @@
         }
       }
     },
+    "/api/GoogleMapsAlgorithm/aaa": {
+      "post": {
+        "tags": [
+          "GoogleMapsAlgorithm"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ride"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ride"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ride"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Payment": {
       "get": {
         "tags": [
@@ -1077,7 +1108,24 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
           }
         }
       }
@@ -1392,13 +1440,25 @@
           "destinationStation": {
             "$ref": "#/components/schemas/Station"
           },
-          "startTime": {
+          "sourceAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "date": {
             "type": "string",
             "format": "date-time"
           },
+          "startTime": {
+            "type": "string",
+            "format": "date-span"
+          },
           "endTime": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-span"
           },
           "status": {
             "type": "string",
@@ -1408,8 +1468,12 @@
             "type": "number",
             "format": "double"
           },
-          "isPrivateRide": {
+          "sharedRide": {
             "type": "boolean"
+          },
+          "numSeats": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1468,14 +1532,6 @@
           "address": {
             "type": "string",
             "nullable": true
-          },
-          "capacity": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "availableSpaces": {
-            "type": "integer",
-            "format": "int32"
           },
           "vehicles": {
             "type": "array",
@@ -1586,9 +1642,45 @@
           "station": {
             "$ref": "#/components/schemas/Station"
           },
-          "availabilityStatus": {
-            "type": "string",
+          "costPerHour": {
+            "type": "number",
+            "format": "double"
+          },
+          "vehicleAvailabilities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VehicleAvailability"
+            },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VehicleAvailability": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vehicleId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vehicle": {
+            "$ref": "#/components/schemas/Vehicle"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-span"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-span"
           }
         },
         "additionalProperties": false

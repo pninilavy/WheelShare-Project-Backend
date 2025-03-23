@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Repository.Entities;
+using Service.Models;
 using Service.NewFolder;
 
 namespace Service.Interfaces
@@ -15,6 +16,8 @@ namespace Service.Interfaces
         public Task<double> TravelTimeCalculation(string origin, string destination);
 
         public Task OptimalPlaceMent(Ride ride);
+        public Task<Help> OptimalDriver(Ride driver, Ride partner, double driverPrice, double partnerPrice, double part1);
+
 
     }
 }

@@ -120,7 +120,7 @@ namespace Mock.Migrations
                 column: "DestinationStationID",
                 principalTable: "Stations",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.NoAction);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Rides_Stations_SourceStationID",
@@ -128,7 +128,7 @@ namespace Mock.Migrations
                 column: "SourceStationID",
                 principalTable: "Stations",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.NoAction);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Rides_Users_DriveId",
@@ -136,7 +136,7 @@ namespace Mock.Migrations
                 column: "DriveId",
                 principalTable: "Users",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.NoAction);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Rides_Vehicles_VehicleId",

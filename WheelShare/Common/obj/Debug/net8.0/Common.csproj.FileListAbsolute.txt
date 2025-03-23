@@ -9,3 +9,15 @@ C:\Users\WIN 11\Desktop\פרויקט\WheelShare\Common\obj\Debug\net8.0\Common.d
 C:\Users\WIN 11\Desktop\פרויקט\WheelShare\Common\obj\Debug\net8.0\refint\Common.dll
 C:\Users\WIN 11\Desktop\פרויקט\WheelShare\Common\obj\Debug\net8.0\Common.pdb
 C:\Users\WIN 11\Desktop\פרויקט\WheelShare\Common\obj\Debug\net8.0\ref\Common.dll
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\bin\Debug\net8.0\Common.deps.json
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\bin\Debug\net8.0\Common.dll
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\bin\Debug\net8.0\Common.pdb
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\obj\Debug\net8.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\obj\Debug\net8.0\Common.AssemblyInfoInputs.cache
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\obj\Debug\net8.0\Common.AssemblyInfo.cs
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\obj\Debug\net8.0\Common.csproj.CoreCompileInputs.cache
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\obj\Debug\net8.0\Common.sourcelink.json
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\obj\Debug\net8.0\Common.dll
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\obj\Debug\net8.0\refint\Common.dll
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\obj\Debug\net8.0\Common.pdb
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\Common\obj\Debug\net8.0\ref\Common.dll

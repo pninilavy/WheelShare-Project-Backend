@@ -27,14 +27,17 @@ namespace Repository.Entities
         public int DestinationStationID { get; set; }
 
         [ForeignKey("DestinationStationID")]
-        public virtual Station DestinationStation { get; set;}
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public virtual Station DestinationStation { get; set; }
+
+        public string SourceAddress { get; set; }
+        public string DestinationAddress { get; set; }
+        public DateTime Date{ get; set; }
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
         public string Status { get; set; }
         public double TotalCost { get; set; }
-        public bool IsPrivateRide { get; set; }
-
-
+        public bool SharedRide { get; set; }
+        public int NumSeats { get; set; }
 
     }
 }

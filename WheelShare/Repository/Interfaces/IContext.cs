@@ -16,6 +16,8 @@ namespace Repository.Interfaces
         public DbSet<Station> Stations { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
+
+        public DbSet<VehicleAvailability> VehicleAvailabilities { get; set; }
         public Task Save();
     }
 }
