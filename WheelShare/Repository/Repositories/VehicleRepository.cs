@@ -31,9 +31,13 @@ namespace Repository.Repositories
 
         }
 
+    
         public async Task<List<Vehicle>> GetAll()
         {
-            return await context.Vehicles.ToListAsync();
+            return await context.Vehicles
+                .Include(v => v.Station) 
+                .Include(v => v.VehicleAvailabilities) 
+                .ToListAsync();
         }
 
         public async Task<Vehicle> GetById(int id)

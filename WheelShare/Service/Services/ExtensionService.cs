@@ -22,7 +22,8 @@ namespace Service.Services
             service.AddScoped<IService<Station>, StationService>();
             service.AddScoped<IService<Vehicle>, VehicleService>();
             service.AddScoped<IService<Payment>, PaymentService>();
-            service.AddScoped<IGoogleMapsAlgorithm, GoogleMapsAlgoritm>();
+            service.AddScoped<IGoogleMapsAlgorithm, GoogleMapsAlgorithm>();
+            service.AddScoped<IFindVehicleAlgorithm, FindVehicleAlgorithm>();
             return service;
 
         }

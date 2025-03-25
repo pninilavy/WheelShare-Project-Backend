@@ -15,19 +15,19 @@ namespace Repository.Entities
         public int DriveId { get; set; }
 
         [ForeignKey("DriveId")]
-        public virtual User Driver { get; set; }
-        public int VehicleId { get; set; }
+        public virtual User? Driver { get; set; }
+        public int? VehicleId { get; set; }
 
         [ForeignKey("VehicleId")]
-        public virtual Vehicle Vehicle { get; set; }
-        public int SourceStationID { get; set; }
+        public virtual Vehicle ? Vehicle { get; set; }
+        public int? SourceStationID { get; set; }
 
         [ForeignKey("SourceStationID")]
-        public virtual Station SourceStation { get; set; }
-        public int DestinationStationID { get; set; }
+        public virtual Station? SourceStation { get; set; }
+        public int ? DestinationStationID { get; set; }
 
         [ForeignKey("DestinationStationID")]
-        public virtual Station DestinationStation { get; set; }
+        public virtual Station? DestinationStation { get; set; }
 
         public string SourceAddress { get; set; }
         public string DestinationAddress { get; set; }

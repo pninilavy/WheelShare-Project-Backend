@@ -16,7 +16,7 @@ namespace Repository.Entities
         [ForeignKey("VehicleId")]
         public virtual Vehicle Vehicle { get; set; }
 
-        public DateTime date { get; set; }
+        public DateTime Date { get; set; }
 
         public TimeSpan StartTime { get; set; }
 

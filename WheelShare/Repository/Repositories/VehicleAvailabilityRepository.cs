@@ -47,7 +47,7 @@ namespace Repository.Repositories
         {
             VehicleAvailability vehicleAvailability = await GetById(id);
             vehicleAvailability.VehicleId=item.VehicleId;
-            vehicleAvailability.date = item.date;
+            vehicleAvailability.Date = item.Date;
             vehicleAvailability.StartTime = item.StartTime;
             vehicleAvailability.EndTime = item.EndTime;
             await context.Save();

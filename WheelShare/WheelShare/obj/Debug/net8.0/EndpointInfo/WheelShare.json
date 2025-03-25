@@ -1421,21 +1421,24 @@
           },
           "vehicleId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "vehicle": {
             "$ref": "#/components/schemas/Vehicle"
           },
           "sourceStationID": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "sourceStation": {
             "$ref": "#/components/schemas/Station"
           },
           "destinationStationID": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "destinationStation": {
             "$ref": "#/components/schemas/Station"

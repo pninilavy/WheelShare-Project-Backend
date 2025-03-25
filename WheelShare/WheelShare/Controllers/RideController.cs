@@ -16,11 +16,13 @@ namespace WheelShare.Controllers
         private readonly IConfiguration config;
         private readonly IService<Ride> _service;
         private readonly IGoogleMapsAlgorithm googleMapsAlgoritm;
-        public RideController(IConfiguration config, IService<Ride> _service, IGoogleMapsAlgorithm googleMapsAlgoritm)
+        private readonly IFindVehicleAlgorithm findVehicleAlgorithm;
+        public RideController(IConfiguration config, IService<Ride> _service, IGoogleMapsAlgorithm googleMapsAlgoritm, IFindVehicleAlgorithm findVehicleAlgorithm)
         {
             this.config = config;
             this._service = _service;
             this.googleMapsAlgoritm = googleMapsAlgoritm;
+            this.findVehicleAlgorithm = findVehicleAlgorithm;
         }
         // GET: api/<RideController>
         [HttpGet]
@@ -38,9 +40,12 @@ namespace WheelShare.Controllers
 
         // POST api/<RideController>
         [HttpPost]
-        public Task<Ride> Post([FromBody] Ride item)
+        public async Task<Ride> Post([FromBody] Ride item)
+
         {
-            return _service.Add(item);
+            Vehicle v = await findVehicleAlgorithm.GetCar(item);
+            item.VehicleId = v.Id;
+            return await _service.Add(item);
         }
     
         

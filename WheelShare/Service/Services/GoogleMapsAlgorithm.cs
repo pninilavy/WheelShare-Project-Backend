@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Mock;
 using Newtonsoft.Json.Linq;
 using Repository.Entities;
@@ -16,17 +17,23 @@ using static System.Net.WebRequestMethods;
 
 namespace Service.Services
 {
-    public class GoogleMapsAlgoritm : IGoogleMapsAlgorithm
+    public class GoogleMapsAlgorithm : IGoogleMapsAlgorithm
     {
+        private static readonly HttpClient client;
         private readonly string apiKey = "AIzaSyAY-WdTYSIPeRpTpYphRA6T-Nvq-agPNZ4";
         private readonly IRepository<Ride> _rideRepostory;
+        public GoogleMapsAlgorithm(IRepository<Ride> _rideRepostory, IConfiguration configuration)
+        {
+            this._rideRepostory = _rideRepostory;
+            this.apiKey = configuration["GoogleMaps:ApiKey"];
+          
+        }
         //קבלת הכתובת שנשלחה כקורדינאטות של 
         //(X,Y)
         public async Task<Coordinates> GetCoordinates(string address)
         {
 
             string url = $"https://maps.googleapis.com/maps/api/geocode/json?address={Uri.EscapeDataString(address)}&key={apiKey}";
-            using HttpClient client = new HttpClient();
             HttpResponseMessage response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
@@ -47,30 +54,34 @@ namespace Service.Services
         }
 
         //חישוב זמן נסיעה  בדקות בין נקודת מוצא לנקודת יעד
+
         public async Task<double> TravelTimeCalculation(string origin, string destination)
         {
-
             string url = $"https://maps.googleapis.com/maps/api/directions/json?origin={origin}&destination={destination}&key={apiKey}";
 
-            using (HttpClient client = new HttpClient())
+            try
             {
                 HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode(); // יוודא שהסטטוס קוד של התגובה הוא Success (2xx)
+
                 string responseBody = await response.Content.ReadAsStringAsync();
+                JObject jsonResponse = JObject.Parse(responseBody);
 
-                if (response.IsSuccessStatusCode)
+                var durationInSeconds = (double)jsonResponse["routes"]?[0]?["legs"]?[0]?["duration"]?["value"];
+
+                if (durationInSeconds == 0)
                 {
-
-                    JObject jsonResponse = JObject.Parse(responseBody);
-                    var durationInSeconds = (double)jsonResponse["routes"][0]["legs"][0]["duration"]["value"];
-
-                    return durationInSeconds / 60;
+                    throw new Exception("Duration value is missing or zero.");
                 }
-                else
-                {
-                    throw new Exception("Error fetching data from Google Maps API.");
-                }
+
+                return durationInSeconds / 60; // מחזיר את הזמן בדקות
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error fetching data from Google Maps API: {ex.Message}");
             }
         }
+
 
         public async Task OptimalPlaceMent(Ride ride)
         {

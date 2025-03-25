@@ -14,5 +14,6 @@ namespace Repository.Entities
         public string Address { get; set; }   
         public virtual ICollection<Vehicle> Vehicles { get;set; }
 
+        
     }
 }

@@ -66,7 +66,7 @@ namespace Mock.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DestinationStationID")
+                    b.Property<int?>("DestinationStationID")
                         .HasColumnType("int");
 
                     b.Property<int>("DriveId")
@@ -85,7 +85,7 @@ namespace Mock.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SourceStationID")
+                    b.Property<int?>("SourceStationID")
                         .HasColumnType("int");
 
                     b.Property<TimeSpan>("StartTime")
@@ -98,7 +98,7 @@ namespace Mock.Migrations
                     b.Property<double>("TotalCost")
                         .HasColumnType("float");
 
-                    b.Property<int>("VehicleId")
+                    b.Property<int?>("VehicleId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -584,6 +584,9 @@ namespace Mock.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
                     b.Property<TimeSpan>("EndTime")
                         .HasColumnType("time");
 
@@ -592,9 +595,6 @@ namespace Mock.Migrations
 
                     b.Property<int>("VehicleId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("date")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -626,9 +626,7 @@ namespace Mock.Migrations
                 {
                     b.HasOne("Repository.Entities.Station", "DestinationStation")
                         .WithMany()
-                        .HasForeignKey("DestinationStationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DestinationStationID");
 
                     b.HasOne("Repository.Entities.User", "Driver")
                         .WithMany("Rides")
@@ -638,15 +636,11 @@ namespace Mock.Migrations
 
                     b.HasOne("Repository.Entities.Station", "SourceStation")
                         .WithMany()
-                        .HasForeignKey("SourceStationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SourceStationID");
 
                     b.HasOne("Repository.Entities.Vehicle", "Vehicle")
                         .WithMany()
-                        .HasForeignKey("VehicleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("VehicleId");
 
                     b.Navigation("DestinationStation");
 

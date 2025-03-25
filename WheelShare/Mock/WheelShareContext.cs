@@ -28,6 +28,7 @@ namespace Mock
             optionsBuilder.UseSqlServer("server=DESKTOP-FQ9CF9I;database=WheelShare;trusted_connection=true;TrustServerCertificate=True");
         }
 
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -80,6 +81,8 @@ namespace Mock
                 new Vehicle { Id = -32, LicensePlate = "666-34-678", Seats = 5, StationID = -9, CostPerHour = 12.9 },
                 new Vehicle { Id = -33, LicensePlate = "666-34-789", Seats = 7, StationID = -9, CostPerHour = 19.9 }
                 );
+
+
 
         }
 

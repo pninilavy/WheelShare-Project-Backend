@@ -29,9 +29,12 @@ namespace Repository.Repositories
             await context.Save();
         }
 
+    
         public async Task<List<Station>> GetAll()
         {
-            return await context.Stations.ToListAsync();
+            return await context.Stations
+                .Include(s => s.Vehicles) 
+                .ToListAsync();
         }
 
         public async Task<Station> GetById(int id)
