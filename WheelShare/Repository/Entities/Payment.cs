@@ -13,11 +13,11 @@ namespace Repository.Entities
         public int RideId { get; set; }
 
         [ForeignKey("RideId")]
-        public virtual Ride Ride { get; set; }
+        public virtual Ride? Ride { get; set; }
         public int UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public virtual User User { get; set; }
+        public virtual User? User { get; set; }
         public double Amount { get; set; }
         public bool Status { get; set; }
 

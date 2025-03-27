@@ -16,12 +16,14 @@ namespace Service.Services
         public static IServiceCollection AddServices(this IServiceCollection service)
         {
             service.AddRepository();
+            service.AddScoped<IEmailService, EmailService>();
             service.AddScoped<IUserService<User>, UserService>();
             service.AddScoped<IService<Ride>, RideService>();
             service.AddScoped<IService<RideParticipant>, RideParticipantService>();
             service.AddScoped<IService<Station>, StationService>();
             service.AddScoped<IService<Vehicle>, VehicleService>();
             service.AddScoped<IService<Payment>, PaymentService>();
+            service.AddScoped<IService<VehicleAvailability>, VehicleAvailabilityService>();
             service.AddScoped<IGoogleMapsAlgorithm, GoogleMapsAlgorithm>();
             service.AddScoped<IFindVehicleAlgorithm, FindVehicleAlgorithm>();
             return service;

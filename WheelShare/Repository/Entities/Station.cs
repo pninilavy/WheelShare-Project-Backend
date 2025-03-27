@@ -12,7 +12,7 @@ namespace Repository.Entities
         public string Area { get; set; }
         public string City { get; set; }
         public string Address { get; set; }   
-        public virtual ICollection<Vehicle> Vehicles { get;set; }
+        public virtual ICollection<Vehicle>? Vehicles { get;set; }
 
         
     }

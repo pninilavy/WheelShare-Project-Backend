@@ -50,6 +50,8 @@ namespace Repository.Repositories
             rideParticipant.PickupLocation = item.PickupLocation;
             rideParticipant.DropOffLocation= item.DropOffLocation;
             rideParticipant.ShareCost= item.ShareCost;
+            rideParticipant.Status= item.Status;
+            rideParticipant.DriverCost= item.DriverCost;
             await context.Save();
             return rideParticipant;
         }

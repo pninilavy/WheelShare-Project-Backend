@@ -13,16 +13,18 @@ namespace Repository.Entities
         public int RideId {  get; set; }
 
         [ForeignKey("RideId")]
-        public virtual Ride Ride { get; set; }
+        public virtual Ride? Ride { get; set; }
         public int UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public virtual User User { get; set; }
+        public virtual User? User { get; set; }
         public string PickupLocation { get; set; }
         public string DropOffLocation { get; set; }
         public double ShareCost {  get; set; }
 
+        public string Status { get; set; }
 
+        public double DriverCost {  get; set; }
 
     }
 }

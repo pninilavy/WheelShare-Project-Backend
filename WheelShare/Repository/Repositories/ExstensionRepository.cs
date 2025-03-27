@@ -21,6 +21,7 @@ namespace Repository.Repositories
             service.AddScoped<IRepository<Station>, StationRepository>();
             service.AddScoped<IRepository<Vehicle>, VehicleRepository>();
             service.AddScoped<IRepository<Payment>, PaymentRepository>();
+            service.AddScoped<IRepository<VehicleAvailability>,VehicleAvailabilityRepository>();
 
             return service;
 

@@ -32,13 +32,20 @@ namespace Repository.Repositories
 
         public async Task<List<Ride>> GetAll()
         {
-            return await context.Rides.ToListAsync();
+            return await context.Rides
+                .Include(x => x.Driver) 
+                .ToListAsync();
         }
+
 
         public async Task<Ride> GetById(int id)
         {
-            return await context.Rides.FirstOrDefaultAsync(ride => ride.Id == id);
+            return await context.Rides
+                .Include(x => x.Driver) 
+                .FirstOrDefaultAsync(ride => ride.Id == id);
         }
+
+
 
         public async Task<Ride> Update(int id, Ride item)
         {

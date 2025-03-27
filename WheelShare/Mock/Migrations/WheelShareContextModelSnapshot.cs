@@ -122,6 +122,9 @@ namespace Mock.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<double>("DriverCost")
+                        .HasColumnType("float");
+
                     b.Property<string>("DropOffLocation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -135,6 +138,10 @@ namespace Mock.Migrations
 
                     b.Property<double>("ShareCost")
                         .HasColumnType("float");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -629,7 +636,7 @@ namespace Mock.Migrations
                         .HasForeignKey("DestinationStationID");
 
                     b.HasOne("Repository.Entities.User", "Driver")
-                        .WithMany("Rides")
+                        .WithMany()
                         .HasForeignKey("DriveId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -700,8 +707,6 @@ namespace Mock.Migrations
             modelBuilder.Entity("Repository.Entities.User", b =>
                 {
                     b.Navigation("Payments");
-
-                    b.Navigation("Rides");
                 });
 
             modelBuilder.Entity("Repository.Entities.Vehicle", b =>

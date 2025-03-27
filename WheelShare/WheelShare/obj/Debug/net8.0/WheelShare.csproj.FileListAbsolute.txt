@@ -263,3 +263,7 @@ C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\WheelShare\obj\Deb
 C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\WheelShare\obj\Debug\net8.0\WheelShare.pdb
 C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\WheelShare\obj\Debug\net8.0\WheelShare.genruntimeconfig.cache
 C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\WheelShare\obj\Debug\net8.0\ref\WheelShare.dll
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\WheelShare\bin\Debug\net8.0\Common.dll
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\WheelShare\bin\Debug\net8.0\Common.pdb
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\WheelShare\bin\Debug\net8.0\SendGrid.dll
+C:\Users\WIN 11\Desktop\PROJECT\WheelShare-Project\WheelShare\WheelShare\bin\Debug\net8.0\StarkbankEcdsa.dll

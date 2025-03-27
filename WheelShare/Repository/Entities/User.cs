@@ -17,9 +17,8 @@ namespace Repository.Entities
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public string IdNumber { get; set; }
-
         public string Gender { get; set; }
-        public virtual ICollection<Ride>? Rides { get; set; }
+        //public virtual ICollection<Ride>? Rides { get; set; }
         public virtual ICollection<Payment>? Payments { get; set; }
     }
 }

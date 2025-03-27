@@ -10,7 +10,7 @@ namespace Service.Models
     {
         public double Diffrence { get; set; }
         public double DriverPrice { get; set; }
-
         public double PartnerPrice { get; set; }
+        public double Duartion { get; set; }
     }
 }

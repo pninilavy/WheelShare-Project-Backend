@@ -15,9 +15,9 @@ namespace Repository.Entities
         public int StationID { get; set; }
 
         [ForeignKey("StationID")]
-        public virtual Station Station { get; set; }
+        public virtual Station?Station { get; set; }
         public double CostPerHour { get; set; }
-        public virtual ICollection<VehicleAvailability> VehicleAvailabilities { get; set; }
+        public virtual ICollection<VehicleAvailability>? VehicleAvailabilities { get; set; }
 
     }
 }

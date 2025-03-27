@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Dto.Entities;
+using Microsoft.AspNetCore.Mvc;
 using Repository.Entities;
 using Service.Interfaces;
 using Service.Models;
@@ -17,12 +18,18 @@ namespace WheelShare.Controllers
         private readonly IService<Ride> _service;
         private readonly IGoogleMapsAlgorithm googleMapsAlgoritm;
         private readonly IFindVehicleAlgorithm findVehicleAlgorithm;
-        public RideController(IConfiguration config, IService<Ride> _service, IGoogleMapsAlgorithm googleMapsAlgoritm, IFindVehicleAlgorithm findVehicleAlgorithm)
+        private readonly IEmailService emailService;
+        private readonly IUserService<User> userService;
+        private readonly IService<Station> stationService;
+        public RideController(IConfiguration config, IService<Ride> _service, IGoogleMapsAlgorithm googleMapsAlgoritm, IFindVehicleAlgorithm findVehicleAlgorithm, IEmailService emailService, IUserService<User> userService, IService<Station> stationService)
         {
             this.config = config;
             this._service = _service;
             this.googleMapsAlgoritm = googleMapsAlgoritm;
             this.findVehicleAlgorithm = findVehicleAlgorithm;
+            this.emailService = emailService;
+            this.userService = userService;
+            this.stationService = stationService;
         }
         // GET: api/<RideController>
         [HttpGet]
@@ -40,12 +47,53 @@ namespace WheelShare.Controllers
 
         // POST api/<RideController>
         [HttpPost]
-        public async Task<Ride> Post([FromBody] Ride item)
+        public async Task<RideDto> Post([FromBody] Ride item)
 
         {
+
             Vehicle v = await findVehicleAlgorithm.GetCar(item);
-            item.VehicleId = v.Id;
-            return await _service.Add(item);
+            if (v != null) {
+                item.VehicleId = v.Id;
+                if (v.VehicleAvailabilities == null)
+                {
+                    v.VehicleAvailabilities = new List<VehicleAvailability>();
+                }
+                v.VehicleAvailabilities.Add(new VehicleAvailability(v.Id,item.Date,item.StartTime,item.EndTime));
+                item.SourceStationID = v.StationID;
+                item.TotalCost = v.CostPerHour * (item.EndTime.TotalMinutes-item.StartTime.TotalMinutes)/60;
+                await _service.Add(item);
+                RideDto r=new RideDto(item);
+                var subject = "אישור הזמנת רכב – WheelShare 🚗";
+                var plainTextContent = $"📅 תאריך הנסיעה: {item.Date}\r\n" +
+                       $"🕒 שעות הנסיעה: {item.StartTime} - {item.EndTime}\r\n" +
+                       $"📍 תחנת מוצא: {item.SourceStationID}\r\n" +
+                       $"💰 עלות: {item.TotalCost} ₪";
+                Station s = await stationService.GetById(v.StationID);
+                var htmlContent = $@"
+                                <div dir='rtl' style='text-align: right; font-family: Arial, sans-serif;'>
+                                <h2>🚗 הזמנת הנסיעה שלך נקלטה בהצלחה!</h2>
+                                <p><strong>📍 תחנת מוצא:</strong> {s.Address+ " "+s.City}</p>
+                                <p><strong>📅 תאריך:</strong> {item.Date:dd/MM/yyyy}</p>
+                                <p><strong>🕒 שעות:</strong> {item.EndTime} - {item.StartTime}</p>
+                                <p><strong>💰 עלות:</strong> {item.TotalCost} ₪</p>
+                                <p>נסיעה טובה! צוות <strong>WheelShare</strong> 🚀</p>
+                                </div>";
+
+
+                User driver =await userService.GetById(item.DriveId);  
+
+
+                await emailService.SendEmailAsync(driver.Email, subject, plainTextContent, htmlContent);
+                if (item.SharedRide)
+                {
+                   await googleMapsAlgoritm.OptimalPlaceMent(item);
+                }
+
+                return r;
+            }
+            
+            return null;
+          
         }
     
         
