@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Repository.Entities;
 using Service.Models;
-using Service.NewFolder;
 
 namespace Service.Interfaces
 {

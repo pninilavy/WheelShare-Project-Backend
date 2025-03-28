@@ -66,6 +66,12 @@ namespace Mock.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("DestinationLatitude")
+                        .HasColumnType("float");
+
+                    b.Property<double>("DestinationLongitude")
+                        .HasColumnType("float");
+
                     b.Property<int?>("DestinationStationID")
                         .HasColumnType("int");
 
@@ -84,6 +90,12 @@ namespace Mock.Migrations
                     b.Property<string>("SourceAddress")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("SourceLatitude")
+                        .HasColumnType("float");
+
+                    b.Property<double>("SourceLongitude")
+                        .HasColumnType("float");
 
                     b.Property<int?>("SourceStationID")
                         .HasColumnType("int");
@@ -128,6 +140,9 @@ namespace Mock.Migrations
                     b.Property<string>("DropOffLocation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<TimeSpan>("PickUpTime")
+                        .HasColumnType("time");
 
                     b.Property<string>("PickupLocation")
                         .IsRequired()
@@ -175,6 +190,12 @@ namespace Mock.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("float");
+
                     b.HasKey("Id");
 
                     b.ToTable("Stations");
@@ -185,70 +206,90 @@ namespace Mock.Migrations
                             Id = -10,
                             Address = "שמעיה 6",
                             Area = "מרכז",
-                            City = "אלעד"
+                            City = "אלעד",
+                            Latitude = 32.051439862876322,
+                            Longitude = 34.948015999999996
                         },
                         new
                         {
                             Id = -1,
                             Address = "אבן גבירול 8",
                             Area = "מרכז",
-                            City = "אלעד"
+                            City = "אלעד",
+                            Latitude = 32.053557145139408,
+                            Longitude = 34.957408026612057
                         },
                         new
                         {
                             Id = -2,
                             Address = "רבן יוחנן בן זכאי 97",
                             Area = "מרכז",
-                            City = "אלעד"
+                            City = "אלעד",
+                            Latitude = 32.048633105278249,
+                            Longitude = 34.965196103968253
                         },
                         new
                         {
                             Id = -3,
                             Address = "רבי עקיבא 100",
                             Area = "מרכז",
-                            City = "בני ברק"
+                            City = "בני ברק",
+                            Latitude = 32.085854374927862,
+                            Longitude = 34.83238070396672
                         },
                         new
                         {
                             Id = -4,
                             Address = "ז'בוטינסקי 150",
                             Area = "מרכז",
-                            City = "בני ברק"
+                            City = "בני ברק",
+                            Latitude = 32.092824318521515,
+                            Longitude = 34.837161519309724
                         },
                         new
                         {
                             Id = -5,
                             Address = "חזון איש 50",
                             Area = "מרכז",
-                            City = "בני ברק"
+                            City = "בני ברק",
+                            Latitude = 32.08015762377341,
+                            Longitude = 34.834114903966878
                         },
                         new
                         {
                             Id = -6,
                             Address = "יפו 234",
                             Area = "מרכז",
-                            City = "ירושלים"
+                            City = "ירושלים",
+                            Latitude = 31.789415617741206,
+                            Longitude = 35.201225803979334
                         },
                         new
                         {
                             Id = -7,
                             Address = "עזה 29",
                             Area = "מרכז",
-                            City = "ירושלים"
+                            City = "ירושלים",
+                            Latitude = 31.772101281022941,
+                            Longitude = 35.213644776995174
                         },
                         new
                         {
                             Id = -8,
                             Address = "דרך חברון 101",
                             Area = "מרכז",
-                            City = "ירושלים"
+                            City = "ירושלים",
+                            Latitude = 31.755126321188925,
+                            Longitude = 35.22159803281663
                         },
                         new
                         {
                             Id = -9,
                             Address = "הנביאים 54",
                             Area = "מרכז",
-                            City = "ירושלים"
+                            City = "ירושלים",
+                            Latitude = 31.784003712931952,
+                            Longitude = 35.22122717329276
                         });
                 });
 

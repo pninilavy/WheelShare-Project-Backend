@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Repository.Entities;
 using Service.Interfaces;
 using Service.Models;
-using Service.NewFolder;
 using Service.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,7 +20,8 @@ namespace WheelShare.Controllers
         private readonly IEmailService emailService;
         private readonly IUserService<User> userService;
         private readonly IService<Station> stationService;
-        public RideController(IConfiguration config, IService<Ride> _service, IGoogleMapsAlgorithm googleMapsAlgoritm, IFindVehicleAlgorithm findVehicleAlgorithm, IEmailService emailService, IUserService<User> userService, IService<Station> stationService)
+        private readonly IDistanceFunction distanceFunction;
+        public RideController(IConfiguration config, IService<Ride> _service, IGoogleMapsAlgorithm googleMapsAlgoritm, IFindVehicleAlgorithm findVehicleAlgorithm, IEmailService emailService, IUserService<User> userService, IService<Station> stationService, IDistanceFunction distanceFunction)
         {
             this.config = config;
             this._service = _service;
@@ -30,6 +30,7 @@ namespace WheelShare.Controllers
             this.emailService = emailService;
             this.userService = userService;
             this.stationService = stationService;
+            this.distanceFunction = distanceFunction;
         }
         // GET: api/<RideController>
         [HttpGet]
@@ -50,7 +51,12 @@ namespace WheelShare.Controllers
         public async Task<RideDto> Post([FromBody] Ride item)
 
         {
-
+            Coordinate source = await distanceFunction.GetCoordinatesAsync(item.SourceAddress);
+            item.SourceLatitude = source.Latitude;
+            item.SourceLongitude = source.Longitude;
+            Coordinate distance = await distanceFunction.GetCoordinatesAsync(item.DestinationAddress);
+            item.DestinationLatitude = distance.Latitude;
+            item.DestinationLongitude = distance.Longitude;
             Vehicle v = await findVehicleAlgorithm.GetCar(item);
             if (v != null) {
                 item.VehicleId = v.Id;
@@ -61,6 +67,8 @@ namespace WheelShare.Controllers
                 v.VehicleAvailabilities.Add(new VehicleAvailability(v.Id,item.Date,item.StartTime,item.EndTime));
                 item.SourceStationID = v.StationID;
                 item.TotalCost = v.CostPerHour * (item.EndTime.TotalMinutes-item.StartTime.TotalMinutes)/60;
+                
+
                 await _service.Add(item);
                 RideDto r=new RideDto(item);
                 var subject = "אישור הזמנת רכב – WheelShare 🚗";

@@ -27,11 +27,8 @@ namespace Service.Models
             List<NominatimResult> results = JsonSerializer.Deserialize<List<NominatimResult>>(json);
             if (results != null && results.Count > 0)
             {
-                return new Coordinate
-                {
-                    Latitude = double.Parse(results[0].lat, CultureInfo.InvariantCulture),
-                    Longitude = double.Parse(results[0].lon, CultureInfo.InvariantCulture)
-                };
+                return new Coordinate(double.Parse(results[0].lat, CultureInfo.InvariantCulture), double.Parse(results[0].lon, CultureInfo.InvariantCulture));
+
             }
             throw new Exception("לא נמצאו קואורדינטות עבור הכתובת: " + address);
         }

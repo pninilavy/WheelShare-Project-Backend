@@ -67,6 +67,11 @@ namespace Repository.Repositories
             ride.NumSeats = item.NumSeats;
             ride.SourceAddress = item.SourceAddress;
             ride.DestinationAddress = item.DestinationAddress;
+            ride.DestinationLongitude = item.DestinationLongitude;
+            ride.DestinationLatitude = item.DestinationLatitude;
+            ride.SourceLatitude = item.SourceLatitude;
+            ride.SourceLongitude = item.SourceLongitude;
+           
             await context.Save();
             return ride;
         }

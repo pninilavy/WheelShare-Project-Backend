@@ -14,7 +14,7 @@ namespace Service.Interfaces
     {
         public  Task<Vehicle> GetCar(Ride ride);
 
-        public Task<double> GetWalkingTimeAsync(string originAddress, string destinationAddress);
+        public Task<double> GetWalkingTimeAsync(Coordinate origin, Coordinate destination);
 
 
     }

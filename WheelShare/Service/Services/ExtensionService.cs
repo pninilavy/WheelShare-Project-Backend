@@ -8,6 +8,7 @@ using Repository.Entities;
 using Repository.Interfaces;
 using Repository.Repositories;
 using Service.Interfaces;
+using Service.Models;
 
 namespace Service.Services
 {
@@ -26,6 +27,7 @@ namespace Service.Services
             service.AddScoped<IService<VehicleAvailability>, VehicleAvailabilityService>();
             service.AddScoped<IGoogleMapsAlgorithm, GoogleMapsAlgorithm>();
             service.AddScoped<IFindVehicleAlgorithm, FindVehicleAlgorithm>();
+            service.AddScoped<IDistanceFunction,DistanceFunction> ();
             return service;
 
         }

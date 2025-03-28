@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Repository.Entities;
 using Service.Interfaces;
+using Service.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,10 +13,12 @@ namespace WheelShare.Controllers
     {
         private readonly IConfiguration config;
         private readonly IService<Station> _service;
-        public StationController(IConfiguration config, IService<Station> _service)
+        private readonly IDistanceFunction distanceFunction;
+        public StationController(IConfiguration config, IService<Station> _service, IDistanceFunction distanceFunction)
         {
             this.config = config;
             this._service = _service;
+            this.distanceFunction= distanceFunction;
         }
         // GET: api/<StationController>
         [HttpGet]
@@ -33,9 +36,12 @@ namespace WheelShare.Controllers
 
         // POST api/<StationController>
         [HttpPost]
-        public Task<Station> Post([FromBody] Station item)
+        public async Task<Station> Post([FromBody] Station item)
         {
-            return _service.Add(item);
+            Coordinate coordinate =await distanceFunction.GetCoordinatesAsync(item.Address + " " + item.City);
+            item.Latitude = coordinate.Latitude;
+            item.Longitude = coordinate.Longitude;
+            return await _service.Add(item);
         }
 
         // PUT api/<StationController>/5

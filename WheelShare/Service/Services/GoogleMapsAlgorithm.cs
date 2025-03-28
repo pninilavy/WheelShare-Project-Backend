@@ -14,7 +14,6 @@ using Repository.Entities;
 using Repository.Interfaces;
 using Service.Interfaces;
 using Service.Models;
-using Service.NewFolder;
 using static System.Net.WebRequestMethods;
 
 namespace Service.Services
@@ -25,22 +24,26 @@ namespace Service.Services
         private readonly IRepository<Ride> _rideRepostory;
         private readonly IRepository<RideParticipant> _rideParticipantRepository;
         private readonly HttpClient _httpClient;
+        private readonly IEmailService _emailService;
+        private readonly IRepository<User> _userRepository;
+        private readonly IDistanceFunction distanceFunction;
 
-        public GoogleMapsAlgorithm(IRepository<Ride> _rideRepostory, IConfiguration configuration, IRepository<RideParticipant> rideParticipantRepository)
+        public GoogleMapsAlgorithm(IRepository<Ride> _rideRepostory, IConfiguration configuration, IRepository<RideParticipant> rideParticipantRepository, IEmailService emailService, IRepository<User> _userRepository,IDistanceFunction distanceFunction)
         {
-            this._rideRepostory = _rideRepostory;         
+            this._rideRepostory = _rideRepostory;
             _httpClient = new HttpClient();
-            _rideParticipantRepository = rideParticipantRepository; 
+            _rideParticipantRepository = rideParticipantRepository;
+            _emailService = emailService;
+            this._userRepository = _userRepository;
+            this.distanceFunction = distanceFunction;
         }
 
 
         //חישוב זמן נסיעה  בדקות בין נקודת מוצא לנקודת יעד
 
-        public async Task<double> GetTravelTimeAsync(string originAddress, string destinationAddress, string mode = "driving")
+        public async Task<double> GetTravelTimeAsync(Coordinate origin, Coordinate destination, string mode = "driving")
         {
-            // קבלת קואורדינטות עבור הכתובות
-            Coordinate origin = await GetCoordinatesAsync(originAddress);
-            Coordinate destination = await GetCoordinatesAsync(destinationAddress);
+            
 
             // בניית URL לשירות OSRM – הפורמט תלוי בפרופיל הנסיעה (driving, walking, cycling וכו')
             string osrmUrl = $"http://router.project-osrm.org/route/v1/{mode}/" +
@@ -66,50 +69,13 @@ namespace Service.Services
 
             throw new Exception("לא ניתן לחשב את זמן הנסיעה בין הכתובות. תגובת OSRM: " + json);
         }
-        public async Task<Coordinate> GetCoordinatesAsync(string address)
-        {
-            string url = $"https://nominatim.openstreetmap.org/search?q={Uri.EscapeDataString(address)}&format=json&limit=1";
-
-            // הוספת User-Agent לבקשה
-            using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, url))
-            {
-                request.Headers.Add("User-Agent", "WheelShareApp/1.0"); // שימי כאן שם מזהה ליישום שלך
-                HttpResponseMessage response = await _httpClient.SendAsync(request);
-
-                // בדיקת תקינות התגובה
-                if (!response.IsSuccessStatusCode)
-                {
-                    throw new Exception($"שגיאה בקבלת קואורדינטות: {response.StatusCode}");
-                }
-
-                string json = await response.Content.ReadAsStringAsync();
-
-                // בדיקה אם JSON ריק
-                if (string.IsNullOrWhiteSpace(json))
-                {
-                    throw new Exception("שגיאה: קיבלנו JSON ריק מ-OSM.");
-                }
-
-                List<NominatimResult> results = JsonSerializer.Deserialize<List<NominatimResult>>(json);
-                if (results != null && results.Count > 0)
-                {
-                    return new Coordinate
-                    {
-                        Latitude = double.Parse(results[0].lat, CultureInfo.InvariantCulture),
-                        Longitude = double.Parse(results[0].lon, CultureInfo.InvariantCulture)
-                    };
-                }
-
-                throw new Exception($"לא נמצאו קואורדינטות עבור הכתובת: {address}");
-            }
-        }
-
+       
 
 
         public async Task OptimalPlaceMent(Ride ride)
         {
             //סינון וקבלת הנסיעות הממתינות המעונינות בשיתוף ותואמות מין  
-            List<Ride> allRides = await _rideRepostory.GetAll();           
+            List<Ride> allRides = await _rideRepostory.GetAll();
             allRides = allRides.Where(x => x.SharedRide && x.Status == "ONHOLD" && x.Driver.Gender == ride.Driver.Gender).ToList();
             double finalDriverPrice = 0, finalPartnerPrice = 0;
             double part1 = 0;
@@ -117,20 +83,27 @@ namespace Service.Services
             Ride driver = null, partner = null;
             bool enoughSeats = false;
             //חישוב לנסיעה הנוכחית ללא שיתוף עד כתובת היעד
-            double ridePrice = await GetTravelTimeAsync(ride.SourceStation.Address+ " "+ ride.SourceStation.City, ride.DestinationAddress);
-            ridePrice *= ride.Vehicle.CostPerHour/60;
+            Coordinate c7=new Coordinate((double)ride.SourceLatitude, (double)ride.SourceLongitude);
+            Coordinate c8 = new Coordinate((double)ride.DestinationLatitude, (double)ride.DestinationLongitude);
+            double ridePrice = await GetTravelTimeAsync(c7, c8);
+            ridePrice *= ride.Vehicle.CostPerHour / 60;
             double rPrice = 0;
 
             double maxDiffrence = -1;
             foreach (Ride r in allRides)
             {
                 //חישוב לנסיעה ללא שיתוף עד כתובת היעד 
-                rPrice = await GetTravelTimeAsync(r.SourceStation.Address+" "+r.SourceStation.City, r.DestinationAddress);
-                rPrice *= r.Vehicle.CostPerHour/60;
 
-                
+                Coordinate c1 = new Coordinate((double)r.SourceLatitude, (double)r.SourceLongitude);
+                Coordinate c2= new Coordinate((double)r.DestinationLatitude, (double)r.DestinationLongitude);
+                rPrice = await GetTravelTimeAsync(c1,c2);
+                rPrice *= r.Vehicle.CostPerHour / 60;
+
+
                 //רק הנהג נוסע עד לתחנת האיסוף
-                part1 = await GetTravelTimeAsync(ride.SourceStation.Address+" "+ride.SourceStation.City, r.SourceAddress);
+                Coordinate c3 = new Coordinate((double)ride.SourceLatitude, (double)ride.SourceLongitude);
+                Coordinate c4= new Coordinate((double)r.SourceLatitude, (double)r.SourceLongitude);
+                part1 = await GetTravelTimeAsync(c3, c4);
 
                 if (r.Driver != ride.Driver)
                 {
@@ -160,7 +133,10 @@ namespace Service.Services
                     }
 
                     //הנהג r כאשר
-                    part1 = await GetTravelTimeAsync(r.SourceStation.Address, ride.SourceAddress);
+
+                    Coordinate c5=new Coordinate((double)r.SourceLatitude, (double)r.SourceLongitude);
+                    Coordinate c6=new Coordinate((double)ride.SourceLatitude,  (double)ride.SourceLongitude);
+                    part1 = await GetTravelTimeAsync(c5, c6);
 
                     //בדיקה האם תואם מבחינת זמנים חורג עד 30 דקות
                     if (r.StartTime.Add(TimeSpan.FromMinutes(part1)) >= ride.StartTime.Add(TimeSpan.FromMinutes(-30)) && r.StartTime.Add(TimeSpan.FromMinutes(part1)) <= ride.StartTime.Add(TimeSpan.FromMinutes(30)))
@@ -201,15 +177,17 @@ namespace Service.Services
                 rideParticipant.DropOffLocation = partner.DestinationAddress;
                 rideParticipant.ShareCost = maxDiffrenceHelp.PartnerPrice;
                 rideParticipant.Status = "ONHOLD";
-                rideParticipant.DriverCost= maxDiffrenceHelp.DriverPrice + driver.Vehicle.CostPerHour * ((driver.EndTime.TotalMinutes - driver.StartTime.TotalMinutes - help.Duartion)/60);                             
+                rideParticipant.DriverCost = maxDiffrenceHelp.DriverPrice + driver.Vehicle.CostPerHour * ((driver.EndTime.TotalMinutes - driver.StartTime.TotalMinutes - help.Duartion) / 60);
+                rideParticipant.PickUpTime = driver.StartTime.Add(TimeSpan.FromMinutes(part1));
                 _rideParticipantRepository.Add(rideParticipant);
                 //שליחת מיילים לנהג ולמשתתף
+                await SendEmailToPartnerAndDriver(rideParticipant);
 
             }
         }
 
         //מחזיר את ההפרש בין המחיר ללא שיתוף נסיעה לבין מחיר עם שיתוף נסיעה 
-        public async Task<Help> OptimalDriver(Ride driver, Ride partner, double driverPrice, double partnerPrice,double part1)
+        public async Task<Help> OptimalDriver(Ride driver, Ride partner, double driverPrice, double partnerPrice, double part1)
         {
             double part2 = 0, part3 = 0;
             double temporaryDriverPrice = 0, temporaryPartnerPrice = 0;
@@ -217,9 +195,14 @@ namespace Service.Services
             //מציאת המרחק בזמן בכל חלק של נסיעה
 
             //הנסיעה המשותפת
-            part2 = await GetTravelTimeAsync(partner.SourceAddress, partner.DestinationAddress);
+
+            Coordinate c1 = new Coordinate((double)partner.SourceLatitude,(double)partner.SourceLongitude);
+            Coordinate c2=new Coordinate((double)partner.DestinationLatitude,(double)partner.DestinationLongitude);
+            part2 = await GetTravelTimeAsync(c1, c2);
             //רק הנהג נוסע עד לתחנת היעד
-            part3 = await GetTravelTimeAsync(partner.DestinationAddress, driver.DestinationAddress);
+            Coordinate c3 = new Coordinate((double)partner.DestinationLatitude, (double)partner.DestinationLongitude);
+            Coordinate c4 = new Coordinate((double)driver.DestinationLatitude, (double)driver.DestinationLongitude);
+            part3 = await GetTravelTimeAsync(c3, c4);
 
 
             //מחיר לנהג
@@ -230,47 +213,79 @@ namespace Service.Services
             //בדיקה האם משתלם לנהג ולמשתתף
             if (temporaryDriverPrice < driverPrice && temporaryPartnerPrice <= partnerPrice)
             {
-                Help h=new Help();
+                Help h = new Help();
                 h.Diffrence = driverPrice - temporaryDriverPrice;
                 h.PartnerPrice = temporaryPartnerPrice;
-                h.DriverPrice=temporaryDriverPrice;
-                h.Duartion=part1+part2 + part3;
+                h.DriverPrice = temporaryDriverPrice;
+                h.Duartion = part1 + part2 + part3;
                 return h;
-                
+
             }
             return null;
         }
         public async Task SendEmailToPartnerAndDriver(RideParticipant rideParticipant)
         {   //שליחת מייל לנהג
-            var plainTextContent = $"🚗 נמצאה התאמה לנסיעה שיתופית!\r\n" +
-                          $"📍 תחנת איסוף: {rideParticipant.PickupLocation}\r\n" +
-                          $"📍 תחנת הורדה: {rideParticipant.DropOffLocation}\r\n" +
-                          $"💰 מחיר נסיעה שיתופית: {rideParticipant.DriverCost} ₪\r\n";
+            var subject = $"🚗 נמצא לך נוסע מתאים!";
+
+            var plainTextContent = $"🚗 נמצא לך נוסע מתאים לנסיעה השיתופית!\r\n" +
+               $"📍 תחנת איסוף: {rideParticipant.PickupLocation}\r\n" +
+               $"📍 תחנת הורדה: {rideParticipant.DropOffLocation}\r\n" +
+               $"💰 מחיר נסיעה: {rideParticipant.DriverCost} ₪\r\n";
 
             var htmlContent = $@"
             <div dir='rtl' style='text-align: right; font-family: Arial, sans-serif;'>
-            <h2>🚗 נמצאה התאמה לנסיעה שיתופית!</h2>
+            <h2>🚗 נמצא לך נוסע מתאים לנסיעה השיתופית!</h2>
             <p><strong>📍 תחנת איסוף:</strong> {rideParticipant.PickupLocation}</p>
             <p><strong>📍 תחנת הורדה:</strong> {rideParticipant.DropOffLocation}</p>
-            <p><strong>💰 מחיר נסיעה שיתופית:</strong> {rideParticipant.DriverCost} ₪</p>
-            <p>נא לאשר או לדחות את ההזמנה:</p>
+            <p><strong>💰 מחיר נסיעה:</strong> {rideParticipant.DriverCost} ₪</p>
+            <p>נא לאשר או לדחות את הבקשה:</p>
             <button style='background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px;'>
-                ✅ אישור
+            ✅ אישור
             </button>
             <button style='background-color: #f44336; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px; margin-right: 10px;'>
-                ❌ דחייה
+            ❌ דחייה
             </button>
-            <p>נסיעה טובה צוות ב-WheelShare! 🚀</p>
-    </div>";
+            <p>נסיעה טובה, צוות WheelShare! 🚀</p>
+            </div>";
+
+            Ride ride = await _rideRepostory.GetById(rideParticipant.RideId);
+            User driver= await _userRepository.GetById(ride.DriveId);
+            await _emailService.SendEmailAsync(driver.Email, subject, plainTextContent, htmlContent);
+            //שליחת מייל למשתתף
+            var subject1 = $"🚗 נמצא לך נהג מתאים!";
+
+            var plainTextContent1 = $"🚗 נמצא לך נהג מתאים לנסיעה השיתופית!\r\n" +
+                $"📍 תחנת איסוף: {rideParticipant.PickupLocation}\r\n" +
+                $"📍 תחנת הורדה: {rideParticipant.DropOffLocation}\r\n" +
+                $"🕒 שעת איסוף: {rideParticipant.PickUpTime}\r\n" +
+                $"💰 מחיר נסיעה: {rideParticipant.ShareCost} ₪\r\n";
+
+            var htmlContent1 = $@"
+                <div dir='rtl' style='text-align: right; font-family: Arial, sans-serif;'>
+                <h2>🚗 נמצא לך נהג מתאים לנסיעה השיתופית!</h2>
+                <p><strong>📍 תחנת איסוף:</strong> {rideParticipant.PickupLocation}</p>
+                <p><strong>📍 תחנת הורדה:</strong> {rideParticipant.DropOffLocation}</p>
+                <p><strong>🕒 שעת איסוף:</strong> {rideParticipant.PickUpTime}</p>
+                <p><strong>💰 מחיר נסיעה:</strong> {rideParticipant.ShareCost} ₪</p>
+                <p>נא לאשר או לדחות את הבקשה:</p>
+                <button style='background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px;'>
+                ✅ אישור
+                </button>
+                <button style='background-color: #f44336; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px; margin-right: 10px;'>
+                    ❌ דחייה
+                </button>
+                <p>נסיעה טובה, צוות WheelShare! 🚀</p>
+                </div>";
+            User partner = await _userRepository.GetById(rideParticipant.UserId);
+            await _emailService.SendEmailAsync(partner.Email, subject1, plainTextContent1, htmlContent1);
         }
-        
+
     }
 }
-            
 
 
 
 
 
 
-    
+

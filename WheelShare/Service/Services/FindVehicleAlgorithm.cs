@@ -24,34 +24,25 @@ namespace Service.Services
         private readonly IRepository<VehicleAvailability> _VehicleAvailabilityRepository;
         private readonly string apiKey;
         private readonly HttpClient _httpClient;
-
-
-        public async Task<Coordinate> GetCoordinatesAsync(string address)
+        private readonly IDistanceFunction _distanceFunction;
+        public FindVehicleAlgorithm(IRepository<Station> _stationRepostory, IConfiguration configuration, IRepository<VehicleAvailability> vehicleAvailabilityRepository,IDistanceFunction distanceFunction)
         {
-            string url = $"https://nominatim.openstreetmap.org/search?q={Uri.EscapeDataString(address)}&format=json&limit=1";
-            HttpResponseMessage response = await _httpClient.GetAsync(url);
-            response.EnsureSuccessStatusCode();
-            string json = await response.Content.ReadAsStringAsync();
-
-            List<NominatimResult> results = JsonSerializer.Deserialize<List<NominatimResult>>(json);
-            if (results != null && results.Count > 0)
-            {
-                return new Coordinate
-                {
-                    Latitude = double.Parse(results[0].lat, CultureInfo.InvariantCulture),
-                    Longitude = double.Parse(results[0].lon, CultureInfo.InvariantCulture)
-                };
-            }
-            throw new Exception("לא נמצאו קואורדינטות עבור הכתובת: " + address);
+            this._stationRepostory = _stationRepostory;
+            this.apiKey = configuration["GoogleMaps:ApiKey"];
+            this._VehicleAvailabilityRepository = vehicleAvailabilityRepository;
+            _httpClient = new HttpClient();
+            _httpClient.DefaultRequestHeaders.Add("User-Agent", "MyOpenStreetMapApp/1.0");
+            this._distanceFunction = distanceFunction;
         }
 
-        public async Task<double> GetWalkingTimeAsync(string originAddress, string destinationAddress)
-        {
-           
-            Coordinate origin = await GetCoordinatesAsync(originAddress);
-            Coordinate destination = await GetCoordinatesAsync(destinationAddress);
 
-        
+
+
+        public async Task<double> GetWalkingTimeAsync(Coordinate origin, Coordinate destination)
+        {
+            Console.WriteLine($"Origin: {origin.Latitude}, {origin.Longitude}");
+            Console.WriteLine($"Destination: {destination.Latitude}, {destination.Longitude}");
+
             string osrmUrl = $"http://router.project-osrm.org/route/v1/walking/" +
                              $"{origin.Longitude.ToString(CultureInfo.InvariantCulture)},{origin.Latitude.ToString(CultureInfo.InvariantCulture)};" +
                              $"{destination.Longitude.ToString(CultureInfo.InvariantCulture)},{destination.Latitude.ToString(CultureInfo.InvariantCulture)}?overview=false";
@@ -77,16 +68,7 @@ namespace Service.Services
 
 
 
-        public FindVehicleAlgorithm(IRepository<Station> _stationRepostory, IConfiguration configuration, IRepository<VehicleAvailability> vehicleAvailabilityRepository)
-        {
-            this._stationRepostory = _stationRepostory;
-            this.apiKey = configuration["GoogleMaps:ApiKey"];
-            this._VehicleAvailabilityRepository = vehicleAvailabilityRepository;
-            _httpClient = new HttpClient();
-           
-            _httpClient.DefaultRequestHeaders.Add("User-Agent", "MyOpenStreetMapApp/1.0");
-        }
-
+   
         public async Task<Vehicle> GetCar(Ride ride)
         {
             Station station = new Station();
@@ -96,7 +78,9 @@ namespace Service.Services
             //הכנסת כל התחנות הקרובות
             foreach (Station s in stations)
             {
-                duration = await GetWalkingTimeAsync(ride.SourceAddress, s.Address + " " + s.City);
+                Coordinate c1 = new Coordinate((double)ride.SourceLatitude,(double)ride.SourceLongitude);
+                Coordinate c2 = new Coordinate((double)s.Latitude, (double)s.Longitude);
+                duration = await GetWalkingTimeAsync(c1,c2);
                 if (duration <= 10)
                 {
                     optionalStations.Add(new StationAndDuration(s, duration));

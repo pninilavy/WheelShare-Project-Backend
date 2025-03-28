@@ -1757,9 +1757,25 @@
             "type": "string",
             "nullable": true
           },
+          "sourceLatitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "sourceLongitude": {
+            "type": "number",
+            "format": "double"
+          },
           "destinationAddress": {
             "type": "string",
             "nullable": true
+          },
+          "destinationLatitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "destinationLongitude": {
+            "type": "number",
+            "format": "double"
           },
           "date": {
             "type": "string",
@@ -1893,6 +1909,10 @@
           "driverCost": {
             "type": "number",
             "format": "double"
+          },
+          "pickUpTime": {
+            "type": "string",
+            "format": "date-span"
           }
         },
         "additionalProperties": false
@@ -1915,6 +1935,14 @@
           "address": {
             "type": "string",
             "nullable": true
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
           },
           "vehicles": {
             "type": "array",

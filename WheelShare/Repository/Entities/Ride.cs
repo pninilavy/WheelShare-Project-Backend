@@ -30,7 +30,13 @@ namespace Repository.Entities
         public virtual Station? DestinationStation { get; set; }
 
         public string SourceAddress { get; set; }
+
+        public double SourceLatitude { get; set; }
+        public double SourceLongitude { get; set; }
+
         public string DestinationAddress { get; set; }
+        public double DestinationLatitude { get; set; }
+        public double DestinationLongitude { get; set; }
         public DateTime Date{ get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }

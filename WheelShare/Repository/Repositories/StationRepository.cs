@@ -48,6 +48,8 @@ namespace Repository.Repositories
             station.Area = item.Area;
             station.City = item.City;
             station.Address = item.Address;
+            station.Longitude = item.Longitude;
+            station.Latitude = item.Latitude;
             await context.Save();
             return station;
 

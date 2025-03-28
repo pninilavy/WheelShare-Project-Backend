@@ -25,25 +25,24 @@ namespace Mock
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-FQ9CF9I;database=WheelShare;trusted_connection=true;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("server=DESKTOP-FQ9CF9I;database=Wheel Share;trusted_connection=true;TrustServerCertificate=True");
         }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
+            base.OnModelCreating(modelBuilder); 
             modelBuilder.Entity<Station>().HasData(
-           new Station {Id=-10,  Area = "מרכז", City = "אלעד", Address = "שמעיה 6" },
-           new Station { Id = -1, Area = "מרכז", City = "אלעד", Address = "אבן גבירול 8"},
-           new Station { Id = -2, Area = "מרכז", City = "אלעד", Address = "רבן יוחנן בן זכאי 97" },
-           new Station { Id = -3, Area = "מרכז", City = "בני ברק", Address = "רבי עקיבא 100" },
-           new Station { Id = -4, Area = "מרכז", City = "בני ברק", Address = "ז'בוטינסקי 150" },
-           new Station { Id = -5, Area = "מרכז", City = "בני ברק", Address = "חזון איש 50" },
-           new Station { Id = -6, Area = "מרכז", City = "ירושלים", Address = "יפו 234" },
-           new Station { Id = -7, Area = "מרכז", City = "ירושלים", Address = "עזה 29" },
-           new Station { Id = -8, Area = "מרכז", City = "ירושלים", Address = "דרך חברון 101" },
-           new Station { Id = -9, Area = "מרכז", City = "ירושלים", Address = "הנביאים 54" }
+           new Station {Id=-10,  Area = "מרכז", City = "אלעד", Address = "שמעיה 6", Latitude = 32.05143986287632, Longitude = 34.948015999999996 },
+           new Station { Id = -1, Area = "מרכז", City = "אלעד", Address = "אבן גבירול 8", Latitude = 32.05355714513941, Longitude = 34.95740802661206 },
+           new Station { Id = -2, Area = "מרכז", City = "אלעד", Address = "רבן יוחנן בן זכאי 97", Latitude = 32.04863310527825, Longitude = 34.96519610396825 },
+           new Station { Id = -3, Area = "מרכז", City = "בני ברק", Address = "רבי עקיבא 100", Latitude = 32.08585437492786, Longitude = 34.83238070396672 },
+           new Station { Id = -4, Area = "מרכז", City = "בני ברק", Address = "ז'בוטינסקי 150", Latitude = 32.092824318521515, Longitude = 34.837161519309724 },
+           new Station { Id = -5, Area = "מרכז", City = "בני ברק", Address = "חזון איש 50", Latitude = 32.08015762377341, Longitude = 34.83411490396688 },
+           new Station { Id = -6, Area = "מרכז", City = "ירושלים", Address = "יפו 234", Latitude = 31.789415617741206, Longitude = 35.201225803979334 },
+           new Station { Id = -7, Area = "מרכז", City = "ירושלים", Address = "עזה 29", Latitude = 31.77210128102294, Longitude = 35.213644776995174 },
+           new Station { Id = -8, Area = "מרכז", City = "ירושלים", Address = "דרך חברון 101", Latitude = 31.755126321188925, Longitude = 35.22159803281663 },
+           new Station { Id = -9, Area = "מרכז", City = "ירושלים", Address = "הנביאים 54", Latitude = 31.784003712931952, Longitude = 35.22122717329276 }
 
             );
             modelBuilder.Entity<Vehicle>().HasData(
@@ -82,7 +81,7 @@ namespace Mock
                 new Vehicle { Id = -33, LicensePlate = "666-34-789", Seats = 7, StationID = -9, CostPerHour = 19.9 }
                 );
 
-
+            
 
         }
 

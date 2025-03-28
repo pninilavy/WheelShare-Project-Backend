@@ -26,5 +26,7 @@ namespace Repository.Entities
 
         public double DriverCost {  get; set; }
 
+        public TimeSpan PickUpTime {  get; set; }
+
     }
 }
