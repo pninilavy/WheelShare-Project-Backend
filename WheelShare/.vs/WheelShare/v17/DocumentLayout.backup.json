@@ -11,144 +11,28 @@
       "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\services\\googlemapsalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\services\\findvehiclealgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\services\\findvehiclealgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\wheelshare\\controllers\\ridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|solutionrelative:wheelshare\\controllers\\ridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\repository\\entities\\ride.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|solutionrelative:repository\\entities\\ride.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328082105_init30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Mock\\Migrations\\20250328082105_init30.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\repository\\entities\\station.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|solutionrelative:repository\\entities\\station.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\wheelshare\\controllers\\rideparticipantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|solutionrelative:wheelshare\\controllers\\rideparticipantcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\repository\\repositories\\riderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\riderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\services\\extensionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\services\\extensionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\services\\findvehiclealgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\services\\findvehiclealgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\interfaces\\igooglemapsalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\interfaces\\igooglemapsalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\repository\\repositories\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\wheelshare\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|solutionrelative:wheelshare\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\interfaces\\ifindvehiclealgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\interfaces\\ifindvehiclealgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\models\\coordinatefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\models\\coordinatefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\models\\coordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\models\\coordinate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\wheelshare\\controllers\\stationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|solutionrelative:wheelshare\\controllers\\stationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\interfaces\\idistancefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\interfaces\\idistancefunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072616_init29.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Mock\\Migrations\\20250328072616_init29.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{145C9105-A753-44E9-B9D5-B71539EDEA85}|Mock\\Mock.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\mock\\wheelsharecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{145C9105-A753-44E9-B9D5-B71539EDEA85}|Mock\\Mock.csproj|solutionrelative:mock\\wheelsharecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072511_init28.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Mock\\Migrations\\20250328072511_init28.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072254_init27.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Mock\\Migrations\\20250328072254_init27.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072112_init26.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Mock\\Migrations\\20250328072112_init26.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\repository\\entities\\rideparticipant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|solutionrelative:repository\\entities\\rideparticipant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\repository\\repositories\\stationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\stationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\repository\\repositories\\rideparticipantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\rideparticipantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\repository\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E760DEFD-9E39-4E68-8393-54C2E65BBAE9}|Repository\\Repository.csproj|solutionrelative:repository\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\models\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\models\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE100632-085A-4E22-98C7-8404FBE9610E}|Common\\Common.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\common\\dto\\entities\\ridedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE100632-085A-4E22-98C7-8404FBE9610E}|Common\\Common.csproj|solutionrelative:common\\dto\\entities\\ridedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\wheelshare\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|solutionrelative:wheelshare\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\wheelshare\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|solutionrelative:wheelshare\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{145C9105-A753-44E9-B9D5-B71539EDEA85}|Mock\\Mock.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\mock\\migrations\\20250326130635_init24.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{145C9105-A753-44E9-B9D5-B71539EDEA85}|Mock\\Mock.csproj|solutionrelative:mock\\migrations\\20250326130635_init24.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\models\\osrmresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\models\\osrmresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\models\\osrmroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\models\\osrmroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\models\\nominatimresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\models\\nominatimresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\service\\models\\help.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1D367E7A-3A49-4CB5-B96B-4D531489D514}|Service\\Service.csproj|solutionrelative:service\\models\\help.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{145C9105-A753-44E9-B9D5-B71539EDEA85}|Mock\\Mock.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\mock\\migrations\\20250326123233_init23.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{145C9105-A753-44E9-B9D5-B71539EDEA85}|Mock\\Mock.csproj|solutionrelative:mock\\migrations\\20250326123233_init23.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{145C9105-A753-44E9-B9D5-B71539EDEA85}|Mock\\Mock.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\mock\\migrations\\20250327200524_init25.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{145C9105-A753-44E9-B9D5-B71539EDEA85}|Mock\\Mock.csproj|solutionrelative:mock\\migrations\\20250327200524_init25.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|c:\\users\\win 11\\desktop\\project\\wheelshare-project\\wheelshare\\wheelshare\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E75D1037-1FA4-4A0E-8621-CA09C9517C91}|WheelShare\\WheelShare.csproj|solutionrelative:wheelshare\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -158,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -166,408 +50,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20250328082105_init30.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328082105_init30.cs",
-              "RelativeDocumentMoniker": "Mock\\Migrations\\20250328082105_init30.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328082105_init30.cs",
-              "RelativeToolTip": "Mock\\Migrations\\20250328082105_init30.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T08:21:06.165Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "StationController.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\StationController.cs",
-              "RelativeDocumentMoniker": "WheelShare\\Controllers\\StationController.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\StationController.cs",
-              "RelativeToolTip": "WheelShare\\Controllers\\StationController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwCoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T07:35:01.284Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "DistanceFunction.cs",
               "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\DistanceFunction.cs",
               "RelativeDocumentMoniker": "Service\\Models\\DistanceFunction.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\DistanceFunction.cs*",
-              "RelativeToolTip": "Service\\Models\\DistanceFunction.cs*",
-              "ViewState": "AgIAABsAAAAAAAAAAAAQwDAAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\DistanceFunction.cs",
+              "RelativeToolTip": "Service\\Models\\DistanceFunction.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwCcAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T07:29:47.006Z",
+              "WhenOpened": "2025-03-30T13:14:28.767Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IDistanceFunction.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Interfaces\\IDistanceFunction.cs",
-              "RelativeDocumentMoniker": "Service\\Interfaces\\IDistanceFunction.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Interfaces\\IDistanceFunction.cs",
-              "RelativeToolTip": "Service\\Interfaces\\IDistanceFunction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABEAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "RideParticipantController.cs",
+              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\RideParticipantController.cs",
+              "RelativeDocumentMoniker": "WheelShare\\Controllers\\RideParticipantController.cs",
+              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\RideParticipantController.cs",
+              "RelativeToolTip": "WheelShare\\Controllers\\RideParticipantController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T07:28:55.412Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "20250328072616_init29.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072616_init29.cs",
-              "RelativeDocumentMoniker": "Mock\\Migrations\\20250328072616_init29.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072616_init29.cs",
-              "RelativeToolTip": "Mock\\Migrations\\20250328072616_init29.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T07:26:16.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "20250328072511_init28.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072511_init28.cs",
-              "RelativeDocumentMoniker": "Mock\\Migrations\\20250328072511_init28.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072511_init28.cs",
-              "RelativeToolTip": "Mock\\Migrations\\20250328072511_init28.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T07:25:11.989Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "20250328072254_init27.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072254_init27.cs",
-              "RelativeDocumentMoniker": "Mock\\Migrations\\20250328072254_init27.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072254_init27.cs",
-              "RelativeToolTip": "Mock\\Migrations\\20250328072254_init27.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T07:22:54.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "20250328072112_init26.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072112_init26.cs",
-              "RelativeDocumentMoniker": "Mock\\Migrations\\20250328072112_init26.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250328072112_init26.cs",
-              "RelativeToolTip": "Mock\\Migrations\\20250328072112_init26.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T07:21:12.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "WheelShareContext.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\WheelShareContext.cs",
-              "RelativeDocumentMoniker": "Mock\\WheelShareContext.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\WheelShareContext.cs",
-              "RelativeToolTip": "Mock\\WheelShareContext.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAowBsAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T06:45:39.607Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "StationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\StationRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\StationRepository.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\StationRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\StationRepository.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAA7wDMAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T06:44:49.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Ride.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Entities\\Ride.cs",
-              "RelativeDocumentMoniker": "Repository\\Entities\\Ride.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Entities\\Ride.cs",
-              "RelativeToolTip": "Repository\\Entities\\Ride.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAADwvyYAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T06:41:56.981Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Station.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Entities\\Station.cs",
-              "RelativeDocumentMoniker": "Repository\\Entities\\Station.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Entities\\Station.cs",
-              "RelativeToolTip": "Repository\\Entities\\Station.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T06:40:21.367Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "20250327200524_init25.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250327200524_init25.cs",
-              "RelativeDocumentMoniker": "Mock\\Migrations\\20250327200524_init25.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250327200524_init25.cs",
-              "RelativeToolTip": "Mock\\Migrations\\20250327200524_init25.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T20:05:24.707Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "IEmailService.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Interfaces\\IEmailService.cs",
-              "RelativeDocumentMoniker": "Service\\Interfaces\\IEmailService.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Interfaces\\IEmailService.cs",
-              "RelativeToolTip": "Service\\Interfaces\\IEmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T11:18:22.758Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Program.cs",
-              "RelativeDocumentMoniker": "WheelShare\\Program.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Program.cs",
-              "RelativeToolTip": "WheelShare\\Program.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAAwEsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T09:11:38.997Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ExtensionService.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Services\\ExtensionService.cs",
-              "RelativeDocumentMoniker": "Service\\Services\\ExtensionService.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Services\\ExtensionService.cs",
-              "RelativeToolTip": "Service\\Services\\ExtensionService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAqwB0AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T09:10:55.722Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "EmailController.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\EmailController.cs",
-              "RelativeDocumentMoniker": "WheelShare\\Controllers\\EmailController.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\EmailController.cs",
-              "RelativeToolTip": "WheelShare\\Controllers\\EmailController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T09:04:31.202Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\EmailService.cs",
-              "RelativeDocumentMoniker": "Service\\Models\\EmailService.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\EmailService.cs",
-              "RelativeToolTip": "Service\\Models\\EmailService.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAowBUAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T21:57:42.96Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "20250326130635_init24.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250326130635_init24.cs",
-              "RelativeDocumentMoniker": "Mock\\Migrations\\20250326130635_init24.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250326130635_init24.cs",
-              "RelativeToolTip": "Mock\\Migrations\\20250326130635_init24.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T13:06:35.967Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Repository\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Entities\\User.cs",
-              "RelativeToolTip": "Repository\\Entities\\User.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T13:00:08.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "20250326123233_init23.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250326123233_init23.cs",
-              "RelativeDocumentMoniker": "Mock\\Migrations\\20250326123233_init23.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Mock\\Migrations\\20250326123233_init23.cs",
-              "RelativeToolTip": "Mock\\Migrations\\20250326123233_init23.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T12:32:33.156Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "RideParticipantRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\RideParticipantRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\RideParticipantRepository.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\RideParticipantRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\RideParticipantRepository.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAswDYAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T12:27:27.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "RideParticipant.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Entities\\RideParticipant.cs",
-              "RelativeDocumentMoniker": "Repository\\Entities\\RideParticipant.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Entities\\RideParticipant.cs",
-              "RelativeToolTip": "Repository\\Entities\\RideParticipant.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAgwBUAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T12:27:06.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RideRepository.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\RideRepository.cs",
-              "RelativeDocumentMoniker": "Repository\\Repositories\\RideRepository.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\RideRepository.cs",
-              "RelativeToolTip": "Repository\\Repositories\\RideRepository.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAADwv0sAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T11:05:37.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\appsettings.json",
-              "RelativeDocumentMoniker": "WheelShare\\appsettings.json",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\appsettings.json",
-              "RelativeToolTip": "WheelShare\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwBAAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-25T23:13:06.311Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IGoogleMapsAlgorithm.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Interfaces\\IGoogleMapsAlgorithm.cs",
-              "RelativeDocumentMoniker": "Service\\Interfaces\\IGoogleMapsAlgorithm.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Interfaces\\IGoogleMapsAlgorithm.cs",
-              "RelativeToolTip": "Service\\Interfaces\\IGoogleMapsAlgorithm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T22:53:44.423Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CoordinateFunction.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\CoordinateFunction.cs",
-              "RelativeDocumentMoniker": "Service\\Models\\CoordinateFunction.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\CoordinateFunction.cs",
-              "RelativeToolTip": "Service\\Models\\CoordinateFunction.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAowB0AAACeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T22:48:08.554Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "OsrmResponse.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\OsrmResponse.cs",
-              "RelativeDocumentMoniker": "Service\\Models\\OsrmResponse.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\OsrmResponse.cs",
-              "RelativeToolTip": "Service\\Models\\OsrmResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T22:04:07.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "OsrmRoute.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\OsrmRoute.cs",
-              "RelativeDocumentMoniker": "Service\\Models\\OsrmRoute.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\OsrmRoute.cs",
-              "RelativeToolTip": "Service\\Models\\OsrmRoute.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T22:03:34.291Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "NominatimResult.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\NominatimResult.cs",
-              "RelativeDocumentMoniker": "Service\\Models\\NominatimResult.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\NominatimResult.cs",
-              "RelativeToolTip": "Service\\Models\\NominatimResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T22:03:01.194Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Coordinate.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\Coordinate.cs",
-              "RelativeDocumentMoniker": "Service\\Models\\Coordinate.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\Coordinate.cs",
-              "RelativeToolTip": "Service\\Models\\Coordinate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T22:02:28.309Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "Help.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\Help.cs",
-              "RelativeDocumentMoniker": "Service\\Models\\Help.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Models\\Help.cs",
-              "RelativeToolTip": "Service\\Models\\Help.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:15:54.507Z"
+              "WhenOpened": "2025-03-30T10:40:47.602Z"
             },
             {
               "$type": "Document",
@@ -577,61 +81,69 @@
               "RelativeDocumentMoniker": "Service\\Services\\GoogleMapsAlgorithm.cs",
               "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Services\\GoogleMapsAlgorithm.cs",
               "RelativeToolTip": "Service\\Services\\GoogleMapsAlgorithm.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAAwGgAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAALIAAAAAAAAAAAAYwMsAAADBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:11:46.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T09:06:20.032Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "RideController.cs",
               "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\RideController.cs",
               "RelativeDocumentMoniker": "WheelShare\\Controllers\\RideController.cs",
               "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\RideController.cs",
               "RelativeToolTip": "WheelShare\\Controllers\\RideController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAuwDQAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAmwEsAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:08:33.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T08:38:01.873Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "RideDto.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Common\\Dto\\Entities\\RideDto.cs",
-              "RelativeDocumentMoniker": "Common\\Dto\\Entities\\RideDto.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Common\\Dto\\Entities\\RideDto.cs",
-              "RelativeToolTip": "Common\\Dto\\Entities\\RideDto.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAnwCIAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:08:03.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IFindVehicleAlgorithm.cs",
-              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Interfaces\\IFindVehicleAlgorithm.cs",
-              "RelativeDocumentMoniker": "Service\\Interfaces\\IFindVehicleAlgorithm.cs",
-              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Interfaces\\IFindVehicleAlgorithm.cs",
-              "RelativeToolTip": "Service\\Interfaces\\IFindVehicleAlgorithm.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAADwvxAAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:06:20.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "FindVehicleAlgorithm.cs",
               "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Services\\FindVehicleAlgorithm.cs",
               "RelativeDocumentMoniker": "Service\\Services\\FindVehicleAlgorithm.cs",
               "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Service\\Services\\FindVehicleAlgorithm.cs",
               "RelativeToolTip": "Service\\Services\\FindVehicleAlgorithm.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAhwCYAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAowHIAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T15:09:13.32Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T08:29:27.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "VehicleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\VehicleRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\VehicleRepository.cs",
+              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\VehicleRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\VehicleRepository.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T19:49:09.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "WheelShare\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\WheelShare\\Controllers\\UserController.cs",
+              "RelativeToolTip": "WheelShare\\Controllers\\UserController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAkwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T19:42:13.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RideRepository.cs",
+              "DocumentMoniker": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\RideRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\RideRepository.cs",
+              "ToolTip": "C:\\Users\\WIN 11\\Desktop\\PROJECT\\WheelShare-Project\\WheelShare\\Repository\\Repositories\\RideRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\RideRepository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T09:05:24.046Z"
             }
           ]
         }

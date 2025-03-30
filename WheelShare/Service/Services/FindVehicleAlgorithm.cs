@@ -112,7 +112,18 @@ namespace Service.Services
                 {
                     if (ride.Date == v2.Date)
                     {
-                        if ((ride.StartTime >= v2.StartTime && ride.StartTime <= v2.EndTime) || (ride.EndTime >= v2.StartTime && ride.EndTime <= v2.EndTime))
+                        DateTime dateRideStart = DateTime.Today.Add(ride.StartTime);
+                        DateTime dateRideEnd = DateTime.Today.Add(ride.EndTime);
+                        DateTime dateVStart = DateTime.Today.Add(v2.StartTime);
+                        DateTime dateVEnd = DateTime.Today.Add(v2.EndTime);
+                        if(ride.StartTime>ride.EndTime)
+                            dateRideEnd=dateRideEnd.AddDays(1);
+                        if(v2.StartTime>v2.EndTime)
+                            dateVEnd=dateVEnd.AddDays(1);
+                        if ((dateRideStart >= dateVStart && dateRideStart <= dateVEnd) ||
+                              (dateRideEnd >= dateVStart && dateRideEnd <= dateVEnd)||
+                              (dateRideStart < dateVStart) && (dateRideEnd > dateVEnd) 
+                              || (dateVStart < dateRideStart) && (dateVEnd > dateRideEnd))
                         {
                             flag = false;
                             break;

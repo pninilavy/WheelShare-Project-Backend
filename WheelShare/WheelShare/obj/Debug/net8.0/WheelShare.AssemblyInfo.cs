@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WheelShare")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d1246dc261f4f014d053893378ea47a28f740c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d052a8fe5ff371553d5e7be24c8053d717750ef4")]
 [assembly: System.Reflection.AssemblyProductAttribute("WheelShare")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WheelShare")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

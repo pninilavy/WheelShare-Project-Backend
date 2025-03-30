@@ -44,6 +44,7 @@ namespace WheelShare.Controllers
         [HttpPost("SignIn")]
         public async Task<IActionResult> Post([FromBody] UserLogin userLogin)
         {
+            
             var user = await _userService.GetByIdNumberAndEmail(userLogin.IdNumber, userLogin.Email);
             if (user != null)
             {
@@ -51,18 +52,21 @@ namespace WheelShare.Controllers
                 TokenAndName tokenAndName = new(token, user.FirstName, user.LastName);
                 return Ok(tokenAndName);
             }
-            return BadRequest("user not found");
+            return BadRequest("משתמש לא רשום");
 
         }
 
         [HttpPost("SignUp")]
-        public async Task<User> Post([FromBody] User user)
+        public async Task<IActionResult> Post([FromBody] User user)
         {
-
-            return  await _userService.Add(user);
-         
+            User user1 = await _userService.GetByIdNumberAndEmail(user.IdNumber, user.Email);
+            if (user1 != null)
+            {
+                return BadRequest(new { message = "משתמש כבר קיים במערכת" });
+            }
+            var newUser = await _userService.Add(user);
+            return Ok(new { message = "ההרשמה בוצעה בהצלחה", user = newUser });
         }
-
 
 
         // PUT api/<UserController>/5

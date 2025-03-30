@@ -37,7 +37,7 @@ namespace Service.Models
                     throw new Exception("שגיאה: קיבלנו JSON ריק מ-OSM.");
                 }
 
-                List<NominatimResult> results = JsonSerializer.Deserialize<List<NominatimResult>>(json);
+                List<NominatimResult> results =   JsonSerializer.Deserialize<List<NominatimResult>>(json);
                 if (results != null && results.Count > 0)
                 {
                     return new Coordinate(double.Parse(results[0].lat, CultureInfo.InvariantCulture), double.Parse(results[0].lon, CultureInfo.InvariantCulture));

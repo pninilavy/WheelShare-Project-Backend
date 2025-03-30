@@ -66,7 +66,14 @@ namespace WheelShare.Controllers
                 }
                 v.VehicleAvailabilities.Add(new VehicleAvailability(v.Id,item.Date,item.StartTime,item.EndTime));
                 item.SourceStationID = v.StationID;
-                item.TotalCost = v.CostPerHour * (item.EndTime.TotalMinutes-item.StartTime.TotalMinutes)/60;
+                DateTime dateRideStart = DateTime.Today.Add(item.StartTime);
+                DateTime dateRideEnd = DateTime.Today.Add(item.EndTime);
+                if(item.StartTime>item.EndTime)
+                {
+                    dateRideEnd = dateRideEnd.AddDays(1); 
+                }
+                Console.WriteLine(((TimeSpan)(dateRideEnd - dateRideStart)).TotalMinutes);
+                item.TotalCost = v.CostPerHour * (((TimeSpan)(dateRideEnd-dateRideStart)).TotalMinutes)/60;
                 
 
                 await _service.Add(item);

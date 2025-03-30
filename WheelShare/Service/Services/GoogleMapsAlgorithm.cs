@@ -27,8 +27,9 @@ namespace Service.Services
         private readonly IEmailService _emailService;
         private readonly IRepository<User> _userRepository;
         private readonly IDistanceFunction distanceFunction;
+        private readonly IRepository<VehicleAvailability> _vehicleAvailabilityRepository;
 
-        public GoogleMapsAlgorithm(IRepository<Ride> _rideRepostory, IConfiguration configuration, IRepository<RideParticipant> rideParticipantRepository, IEmailService emailService, IRepository<User> _userRepository,IDistanceFunction distanceFunction)
+        public GoogleMapsAlgorithm(IRepository<Ride> _rideRepostory, IConfiguration configuration, IRepository<RideParticipant> rideParticipantRepository, IEmailService emailService, IRepository<User> _userRepository,IDistanceFunction distanceFunction, IRepository<VehicleAvailability> vehicleAvailabilityRepository)
         {
             this._rideRepostory = _rideRepostory;
             _httpClient = new HttpClient();
@@ -36,6 +37,7 @@ namespace Service.Services
             _emailService = emailService;
             this._userRepository = _userRepository;
             this.distanceFunction = distanceFunction;
+            _vehicleAvailabilityRepository = vehicleAvailabilityRepository; 
         }
 
 
@@ -111,7 +113,13 @@ namespace Service.Services
 
 
                     //בדיקה האם תואם מבחינת זמנים חורג עד 30 דקות
-                    if (ride.StartTime.Add(TimeSpan.FromMinutes(part1)) >= r.StartTime.Add(TimeSpan.FromMinutes(-30)) && ride.StartTime.Add(TimeSpan.FromMinutes(part1)) <= r.StartTime.Add(TimeSpan.FromMinutes(30)))
+                    DateTime dateRide= DateTime.Today.Add(ride.StartTime);
+                    dateRide = dateRide.AddMinutes(part1);
+                    DateTime dateR1 = DateTime.Today.Add(r.StartTime);
+                    DateTime dateR2 = DateTime.Today.Add(r.StartTime);
+                    dateR1 = dateR1.AddMinutes(30);
+                    dateR2 = dateR2.AddMinutes(-30);
+                    if(dateRide>=dateR2&&dateRide<=dateR1) 
                     {
                         //בדיקה האם יש מספיק מושבים ברכב
                         if (ride.NumSeats + r.NumSeats <= ride.Vehicle.Seats)
@@ -120,7 +128,7 @@ namespace Service.Services
                             help = await OptimalDriver(ride, r, ridePrice, rPrice, part1);
 
                             //בדיקה האם ההפרש הוא המקסימלי עד כה
-                            if (help.Diffrence > maxDiffrence)
+                            if (help?.Diffrence > maxDiffrence)
                             {
                                 maxDiffrence = help.Diffrence;
                                 maxDiffrenceHelp = help;
@@ -138,9 +146,18 @@ namespace Service.Services
                     Coordinate c6=new Coordinate((double)ride.SourceLatitude,  (double)ride.SourceLongitude);
                     part1 = await GetTravelTimeAsync(c5, c6);
 
+
                     //בדיקה האם תואם מבחינת זמנים חורג עד 30 דקות
-                    if (r.StartTime.Add(TimeSpan.FromMinutes(part1)) >= ride.StartTime.Add(TimeSpan.FromMinutes(-30)) && r.StartTime.Add(TimeSpan.FromMinutes(part1)) <= ride.StartTime.Add(TimeSpan.FromMinutes(30)))
-                    {
+                    DateTime dateDriver = DateTime.Today.Add(r.StartTime);
+                    dateDriver = dateDriver.AddMinutes(part1);
+                    DateTime datePartner1 = DateTime.Today.Add(ride.StartTime);
+                    DateTime datePartner2 = DateTime.Today.Add(ride.StartTime);
+                    datePartner1 = datePartner1.AddMinutes(30);
+                    datePartner2 = datePartner2.AddMinutes(-30);
+                    if (dateDriver >= datePartner2 && dateDriver <= datePartner1)
+                        //בדיקה האם תואם מבחינת זמנים חורג עד 30 דקות
+                    {                        if (r.StartTime.Add(TimeSpan.FromMinutes(part1)) >= ride.StartTime.Add(TimeSpan.FromMinutes(-30)) && r.StartTime.Add(TimeSpan.FromMinutes(part1)) <= ride.StartTime.Add(TimeSpan.FromMinutes(30)))
+
                         //בדיקה האם יש מספיק מושבים ברכב
                         if (ride.NumSeats + r.NumSeats <= r.Vehicle.Seats)
                         {
@@ -148,7 +165,7 @@ namespace Service.Services
                             help = await OptimalDriver(r, ride, rPrice, ridePrice, part1);
 
                             //בדיקה האם ההפרש הוא המקסימלי עד כה
-                            if (help.Diffrence > maxDiffrence)
+                            if (help?.Diffrence > maxDiffrence)
                             {
                                 maxDiffrence = help.Diffrence;
                                 maxDiffrenceHelp = help;
@@ -165,7 +182,7 @@ namespace Service.Services
                 }
             }
 
-            if (driver != null && partner != null)
+            if (help!=null &&driver != null && partner != null)
             {
                 //הוספת הנסיעה השיתופית כאשר הסטטוס הוא בהמתנה לאישור
                 RideParticipant rideParticipant = new RideParticipant();
@@ -177,9 +194,22 @@ namespace Service.Services
                 rideParticipant.DropOffLocation = partner.DestinationAddress;
                 rideParticipant.ShareCost = maxDiffrenceHelp.PartnerPrice;
                 rideParticipant.Status = "ONHOLD";
-                rideParticipant.DriverCost = maxDiffrenceHelp.DriverPrice + driver.Vehicle.CostPerHour * ((driver.EndTime.TotalMinutes - driver.StartTime.TotalMinutes - help.Duartion) / 60);
+                DateTime dateRideStart = DateTime.Today.Add(driver.StartTime);
+                DateTime dateRideEnd = DateTime.Today.Add(driver.EndTime);
+                
+                if (driver.StartTime > driver.EndTime)
+                {
+                    dateRideEnd = dateRideEnd.AddDays(1);
+                }
+                rideParticipant.DriverCost = maxDiffrenceHelp.DriverPrice + driver.Vehicle.CostPerHour * (((TimeSpan)(dateRideEnd - dateRideStart)).TotalMinutes - maxDiffrenceHelp.Duartion)/ 60;
                 rideParticipant.PickUpTime = driver.StartTime.Add(TimeSpan.FromMinutes(part1));
-                _rideParticipantRepository.Add(rideParticipant);
+                driver.Status = "NOTONHOLD";
+                List<VehicleAvailability> lst=await _vehicleAvailabilityRepository.GetAll();
+                VehicleAvailability v = lst.FirstOrDefault(x => x.VehicleId == partner.VehicleId && x.StartTime == partner.StartTime && x.EndTime == partner.EndTime);
+                await _vehicleAvailabilityRepository.Delete(v.Id);
+                await _rideRepostory.Delete(partner.Id);
+                await _rideParticipantRepository.Add(rideParticipant);
+
                 //שליחת מיילים לנהג ולמשתתף
                 await SendEmailToPartnerAndDriver(rideParticipant);
 
@@ -237,14 +267,7 @@ namespace Service.Services
             <h2>🚗 נמצא לך נוסע מתאים לנסיעה השיתופית!</h2>
             <p><strong>📍 תחנת איסוף:</strong> {rideParticipant.PickupLocation}</p>
             <p><strong>📍 תחנת הורדה:</strong> {rideParticipant.DropOffLocation}</p>
-            <p><strong>💰 מחיר נסיעה:</strong> {rideParticipant.DriverCost} ₪</p>
-            <p>נא לאשר או לדחות את הבקשה:</p>
-            <button style='background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px;'>
-            ✅ אישור
-            </button>
-            <button style='background-color: #f44336; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px; margin-right: 10px;'>
-            ❌ דחייה
-            </button>
+            <p><strong>💰 מחיר נסיעה:</strong> {rideParticipant.DriverCost} ₪</p>          
             <p>נסיעה טובה, צוות WheelShare! 🚀</p>
             </div>";
 
@@ -267,13 +290,6 @@ namespace Service.Services
                 <p><strong>📍 תחנת הורדה:</strong> {rideParticipant.DropOffLocation}</p>
                 <p><strong>🕒 שעת איסוף:</strong> {rideParticipant.PickUpTime}</p>
                 <p><strong>💰 מחיר נסיעה:</strong> {rideParticipant.ShareCost} ₪</p>
-                <p>נא לאשר או לדחות את הבקשה:</p>
-                <button style='background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px;'>
-                ✅ אישור
-                </button>
-                <button style='background-color: #f44336; color: white; padding: 10px 20px; border: none; cursor: pointer; font-weight: bold; border-radius: 5px; margin-right: 10px;'>
-                    ❌ דחייה
-                </button>
                 <p>נסיעה טובה, צוות WheelShare! 🚀</p>
                 </div>";
             User partner = await _userRepository.GetById(rideParticipant.UserId);
