@@ -1,7 +1,3 @@
-[![צפי בסרטון הדגמה](https://img.shields.io/badge/🎥%20צפי%20בסרטון%20הדגמה-blue)](https://github.com/pninilavy/WheelShare-Project-Backend/raw/main/3%20מהירות.mp4)
-
-
-
 <div dir="rtl">
 
 # 🚗 WHEELSHARE – מערכת חכמה לשיתוף והשכרת רכבים
