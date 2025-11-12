@@ -1,9 +1,5 @@
-<div align="center">
-  <video width="600" controls autoplay loop muted>
-    <source src="https://github.com/pninilavy/WheelShare-Project-Backend/raw/main/3%20מהירות.mp4" type="video/mp4">
-    הדפדפן שלך לא תומך בהצגת וידאו.
-  </video>
-</div>
+[![צפי בסרטון הדגמה](https://img.shields.io/badge/🎥%20צפי%20בסרטון%20הדגמה-blue)](https://github.com/pninilavy/WheelShare-Project-Backend/raw/main/3%20מהירות.mp4)
+
 
 
 <div dir="rtl">
