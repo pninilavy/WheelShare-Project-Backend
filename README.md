@@ -1,8 +1,10 @@
 <div align="center">
-  <video src="https://github.com/pninilavy/WheelShare-Project-Backend/raw/main/%D7%9E%D7%94%D7%99%D7%A8%D7%95%D7%AA%203.mp4" width="600" controls autoplay loop muted>
+  <video width="600" controls autoplay loop muted>
+    <source src="https://github.com/pninilavy/WheelShare-Project-Backend/raw/main/3%20מהירות.mp4" type="video/mp4">
     הדפדפן שלך לא תומך בהצגת וידאו.
   </video>
 </div>
+
 
 <div dir="rtl">
 
